@@ -1,0 +1,245 @@
+<!DOCTYPE html><html class="dark" lang="es" style=""><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Astävik - Modern Minimalist</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "brand-orange": "#f97316",
+                "accent-orange": "#F45800",
+                "bg-dark": "#0a0a0a"
+        },
+        "fontFamily": {
+                "sans": ["'Outfit'", "sans-serif"],
+                "serif": ["'Outfit'", "sans-serif"],
+                "mono": ["'Outfit'", "sans-serif"],
+                "montserrat": ["'Montserrat'", "sans-serif"]
+        }
+      }
+    },
+  }
+</script>
+<style>
+    body {
+        background-color: #0a0a0a;
+        color: #e5e2e1;
+    }
+    .text-orange { color: #f97316; }
+    .bg-orange { background-color: #f97316; }
+    .hover-bg-orange-dark:hover { background-color: #ea580c; }
+    
+    /* Brutalist grid styles */
+    .brutal-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1px;
+        background-color: #333;
+        border: 1px solid #333;
+    }
+    .brutal-cell {
+        background-color: #0a0a0a;
+        padding: 2rem;
+    }
+    .brutal-img {
+        width: 100%;
+        height: 100%;
+        transition: filter 0.3s;
+    }
+    .brutal-cell:hover .brutal-img {
+        filter: grayscale(0%) contrast(1.2);
+    }
+</style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-bg-dark overflow-x-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between border-b border-[#333] px-6 py-4 sticky top-0 z-50 bg-bg-dark/90 backdrop-blur-sm mix-blend-difference"><div class="flex items-center gap-3">
+<div class="size-8 text-brand-orange"><img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZMDXfTB08woNYtkiXLN6L3wxsnWF3SmlfVFe-5DMxShmiNq59OlvgQSfCD-8PwFaqpet3HX9Eyg8TYwJnQTUVmyfClO710l4mKaTB5TMItBPxoejd_fWKG8MUqPJO-j8QPrMiYDKbPPRaJ6XfEXX53tU6Aa0RLE2m69BWxREfLv5hUjqHxhKC7vctZQxrknemJq5oT30dgUPKr3aG0WKrGrlWY7EvF49rWGj8DVxFow6bb0NJGh_GyVV8Z9PAdHcm1OA" alt="Astävik Mountain Logo" class="w-full h-full object-contain"></div>
+<h2 class="text-white font-serif font-black tracking-tighter text-2xl uppercase">Astävik</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-6 uppercase text-xs font-bold tracking-widest text-[#888]">
+<a class="hover:text-brand-orange transition-colors" href="#catalogo">[ BICICLETAS ]</a>
+<a class="hover:text-brand-orange transition-colors" href="#accesorios">[ ACCESORIOS ]</a>
+<a class="hover:text-brand-orange transition-colors" href="#indumentaria">[ INDUMENTARIA ]</a>
+<a class="hover:text-brand-orange transition-colors" href="#taller">[ TALLER ]</a>
+<a class="hover:text-brand-orange transition-colors" href="#blog">[ BLOG ]</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="text-[#888] hover:text-brand-orange transition-colors flex items-center"><span class="material-symbols-outlined">search</span></button>
+<button class="text-[#888] hover:text-brand-orange transition-colors flex items-center"><span class="material-symbols-outlined">shopping_cart</span></button>
+<button class="flex items-center justify-center border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-white transition-colors uppercase text-xs font-bold tracking-widest px-6 h-10">INICIAR SESIÓN</button>
+</div>
+</div></header>
+<main class="flex-1">
+<!-- Hero Section: Editorial & Asymmetric -->
+<section class="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-bg-dark border-b border-[#333] py-24">
+<div class="absolute inset-0 z-10 flex flex-col justify-center px-6 md:px-20">
+<h1 class="text-brand-orange font-serif font-black leading-[0.8] tracking-tighter text-[15vw] md:text-[12vw] uppercase mix-blend-difference opacity-90 z-20">
+        ELITE O<br>NADA.
+    </h1>
+</div>
+<div class="absolute inset-0 z-0 overflow-hidden">
+<div class="absolute inset-0 z-10 bg-gradient-to-r from-bg-dark via-bg-dark/0 to-transparent" style="background: linear-gradient(to right, rgb(10, 10, 10) 0%, rgba(10, 10, 10, 0) 25%);"></div>
+<img alt="Professional mountain biker in forest" class="w-full h-full object-cover object-center contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtwgvtaDrKh-WR7b2L6dLwPQKLaXa5YGoJmrWY-mZt9tI-2C-iwu_M7oGOsgGwRdT9wA1Y6pxZJxg9yNAKJ18piIag5QKr8TSsDaBYhkelJlHuuGZKIhR2tSNsYs6NdLb2ivfYYW-jjD4Ypm8PAH9pUi87rK_Exr0hrTP1LqwDqAqAKfsWaF2FMJN5X_pwAkXvttZ7LMDxHU1YJ-JPt6rGFoIPAkfnxij0vA-8MeVawU61q62Y8Ce0kA">
+</div>
+<div class="absolute bottom-10 left-6 md:left-20 z-20 max-w-sm">
+<p class="text-white text-sm font-mono border-l-2 border-brand-orange pl-4">
+        SIN CONCESIONES. SIN EXCUSAS.<br>MÁQUINAS DE PURO RENDIMIENTO.
+    </p>
+<button class="mt-6 flex items-center justify-center bg-brand-orange text-bg-dark uppercase text-sm font-bold tracking-widest px-8 py-4 hover:bg-white transition-colors">
+        DOMINA AHORA
+    </button>
+</div>
+</section>
+<!-- Brutalist Specs Grid -->
+<section class="border-b border-[#333]">
+<div class="grid grid-cols-1 md:grid-cols-3 border-y border-[#333] divide-y md:divide-y-0 md:divide-x divide-[#333]">
+<div class="p-10 flex flex-col gap-4 group hover:bg-[#111] transition-colors"><span class="text-brand-orange text-5xl font-serif">01</span><h3 class="text-white font-serif font-bold text-2xl uppercase">RUTA</h3><p class="text-[#888] text-sm font-mono">Máquinas de precisión diseñadas para la velocidad pura y eficiencia aerodinámica en asfalto.</p></div>
+<div class="p-10 flex flex-col gap-4 group hover:bg-[#111] transition-colors"><span class="text-brand-orange text-5xl font-serif">02</span><h3 class="text-white font-serif font-bold text-2xl uppercase">GRAVEL</h3><p class="text-[#888] text-sm font-mono">Versatilidad sin límites para explorar terrenos mixtos con estabilidad y control absoluto.</p></div>
+<div class="p-10 flex flex-col gap-4 group hover:bg-[#111] transition-colors"><span class="text-brand-orange text-5xl font-serif">03</span><h3 class="text-white font-serif font-bold text-2xl uppercase">MONTAÑA</h3><p class="text-[#888] text-sm font-mono">Ingeniería robusta para dominar los senderos más técnicos y exigentes con tracción total.</p></div>
+</div>
+</section>
+<!-- Statistics Section -->
+<!-- Product Grid: Brutalist Layout -->
+<section class="py-20" id="catalogo">
+<div class="px-6 md:px-10 mb-10 flex justify-between items-end">
+<h2 class="text-white font-serif font-black text-4xl md:text-6xl uppercase tracking-tighter">EL ARSENAL</h2>
+<a class="text-brand-orange hover:text-white text-xs font-bold uppercase tracking-widest flex items-center gap-2 border-b border-brand-orange pb-1 font-mono" href="#">
+            VER TODO <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="brutal-grid mx-6 md:mx-10">
+<!-- Card 1 -->
+<div class="brutal-cell col-span-12 md:col-span-6 flex flex-col h-full border-b border-[#333] md:border-b-0">
+<div class="h-[300px] bg-[#0e0e0e] relative overflow-hidden mb-6 border border-[#333]">
+<img alt="Astävik Carbon Pro" class="brutal-img mix-blend-lighten object-contain contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYl4V3X7k7XSZHaRBD3biHvl7xv1p0TWhnYZwbb43c1ef4Dt8PqdO40GOCakdqJuuWgahRqZDOPqdBlR-qhb8rY57nscE_-QCKUi7qmvPVsSAE3iOb3nVErdE1tBLNthsm7i6WvUULUy1Qan4JKqvy8_xx5hNuznxd459JuGuoSI3B_zU81YsMdkf40PO5Ioqi67NumYdqBXxcF4CzPbH95alYgL4iPDXiuLQCAYceRmLGLLCSqKrKmQ">
+<div class="absolute top-4 right-4 bg-brand-orange text-bg-dark text-xs font-bold px-2 py-1 uppercase font-mono">NUEVO LANZAMIENTO</div>
+</div>
+<div class="flex flex-col flex-1 justify-end">
+<p class="text-brand-orange text-[10px] tracking-widest uppercase mb-2 font-mono">ROAD / AERO // SPECS: CRBN-9</p>
+<h3 class="text-white font-serif font-bold text-2xl uppercase mb-6">Astävik Carbon Pro</h3>
+<div class="flex justify-between items-end border-t border-[#333] pt-4 mt-auto">
+<span class="block text-white text-xl md:text-2xl font-mono">$18.500.000 COP</span>
+<button class="border border-[#555] text-white text-xs uppercase px-4 py-2 hover:bg-white hover:text-bg-dark transition-colors font-mono">INSPECCIONAR</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="brutal-cell col-span-12 md:col-span-6 flex flex-col h-full border-b border-[#333] md:border-b-0 border-l-0 md:border-l border-[#333]">
+<div class="h-[300px] bg-[#0e0e0e] relative overflow-hidden mb-6 border border-[#333]">
+<img alt="Astävik Gravel X" class="brutal-img mix-blend-lighten object-contain contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0v_amFW4sSrtG533sBx0lPzNkrMcYVZKmob153nx1-TLV-8Ic9EIDvQy30o9_eZpn8s7ZqgXidx3iOs7Mcr1yc3qGGpDOpHnKe_1Tx4Pqo_JY6Dodhyz7zy9b8afgoKHk2cddYeWBIiZyG6EeSm5D4Vd-rrWc5KTgbRu9LEvh0xWUqc0OO8T4jrM1Z1Y81YJEtTeXNuxAooOwU7M1tPKVOAplhxYOyZIj3LBy7oEXczQJcWemfprsfQ">
+</div>
+<div class="flex flex-col flex-1 justify-end">
+<p class="text-brand-orange text-[10px] tracking-widest uppercase mb-2 font-mono">GRAVEL / ADVENTURE // SPECS: DIRT-X</p>
+<h3 class="text-white font-serif font-bold text-2xl uppercase mb-6">Astävik Gravel X</h3>
+<div class="flex justify-between items-end border-t border-[#333] pt-4 mt-auto">
+<span class="block text-white text-xl md:text-2xl font-mono">$15.600.000 COP</span>
+<button class="border border-[#555] text-white text-xs uppercase px-4 py-2 hover:bg-white hover:text-bg-dark transition-colors font-mono">INSPECCIONAR</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="brutal-cell col-span-12 md:col-span-6 flex flex-col h-full border-t border-[#333]">
+<div class="h-[300px] bg-[#0e0e0e] relative overflow-hidden mb-6 border border-[#333]">
+<img alt="Astävik XC Elite" class="brutal-img mix-blend-lighten object-contain contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAl6kwQzTiUuAAfV9i6xvaGuXZptRlzndej-DDJmcaj49F1GeCKX_kO0bRwEjfhDZP1TeL_kveAAbn8tLB80cc_HtJyA4H_PH2rEMlj3OVRUh-MJE7AkufP1YyuD1UfBbm0bi8RsbS-qWEn5j5xaNj70vCiWH0EOmK4Q2KCovP3vX9cmuLXS_M4y_Gz4mBWGgxE6k8d_D5VDmRblSeNvib7OjDAGzAMNLAIWLlOyF0PaCDGFUKHI5G5A">
+</div>
+<div class="flex flex-col flex-1 justify-end">
+<p class="text-brand-orange text-[10px] tracking-widest uppercase mb-2 font-mono">MTB / XC // SPECS: XC-ELT</p>
+<h3 class="text-white font-serif font-bold text-2xl uppercase mb-6">Astävik XC Elite</h3>
+<div class="flex justify-between items-end border-t border-[#333] pt-4 mt-auto">
+<span class="block text-white text-xl md:text-2xl font-mono">$11.900.000 COP</span>
+<button class="border border-[#555] text-white text-xs uppercase px-4 py-2 hover:bg-white hover:text-bg-dark transition-colors font-mono">INSPECCIONAR</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="brutal-cell col-span-12 md:col-span-6 flex flex-col h-full border-t border-[#333] border-l-0 md:border-l border-[#333]">
+<div class="h-[300px] bg-[#0e0e0e] relative overflow-hidden mb-6 border border-[#333]">
+<img alt="Astävik Enduro Pro" class="brutal-img mix-blend-lighten object-contain contrast-125" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQX2sVcPl0XNyu2MXjl9SlpJcqopLUsuoMvFu7Khb8kHp34-20XJTWM_uZm4d9YFfEIRlxgJ4biGFS7VlVS-861-I2Iqa0AnCNaFv80Cmt6znzO9HWzV8kXDPYorYlZzyP19iwd-d012JtMcn1ztEMV-UQNoL_n0CUwkOnHwoKIAx4MfaXs01q3VG8PLHbbdFrFs1jsvkabXqJQOhDpgQoELNx0Hs5xb20FDa1pPVpXGncHI1d-dIY0w">
+</div>
+<div class="flex flex-col flex-1 justify-end">
+<p class="text-brand-orange text-[10px] tracking-widest uppercase mb-2 font-mono">MTB / ENDURO // SPECS: END-PRO</p>
+<h3 class="text-white font-serif font-bold text-2xl uppercase mb-6">Astävik Enduro Pro</h3>
+<div class="flex justify-between items-end border-t border-[#333] pt-4 mt-auto">
+<span class="block text-white text-xl md:text-2xl font-mono">$15.600.000 COP</span>
+<button class="border border-[#555] text-white text-xs uppercase px-4 py-2 hover:bg-white hover:text-bg-dark transition-colors font-mono">INSPECCIONAR</button>
+</div>
+</div>
+</div>
+</div>
+</section><section class="py-20 border-b border-[#333]"><div class="px-6 md:px-10 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-0 md:divide-x divide-[#333]"><div class="flex flex-col items-center justify-center py-4 md:py-0"><span class="text-accent-orange font-montserrat font-black text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-none mb-4">250+</span><h4 class="text-white font-montserrat font-bold text-sm md:text-base uppercase tracking-widest text-center">CICLISTAS RODANDO</h4></div><div class="flex flex-col items-center justify-center py-4 md:py-0 border-t md:border-t-0 border-[#333]"><span class="text-accent-orange font-montserrat font-black text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-none mb-4">178+</span><h4 class="text-white font-montserrat font-bold text-sm md:text-base uppercase tracking-widest text-center">Bicicletas CERTIFICADAS vendidas</h4></div><div class="flex flex-col items-center justify-center py-4 md:py-0 border-t md:border-t-0 border-[#333]"><span class="text-accent-orange font-montserrat font-black text-6xl md:text-7xl lg:text-8xl tracking-tighter leading-none mb-4">100%</span><h4 class="text-white font-montserrat font-bold text-sm md:text-base uppercase tracking-widest text-center">SATISFACCIÓN EN REPARACIONES</h4></div></div></section>
+<!-- Aggressive Testimonial -->
+<section class="py-24 bg-brand-orange border-y border-[#333] relative overflow-hidden mix-blend-difference">
+<div class="max-w-5xl mx-auto px-6 text-center">
+<h2 class="text-bg-dark font-serif font-black text-5xl md:text-7xl uppercase leading-none mb-10 tracking-tighter mix-blend-color-burn">
+        "IMPLACABLE. RÁPIDA. EXIGE TODO LO QUE TIENES."
+    </h2>
+<div class="flex items-center justify-center gap-6">
+<div class="w-16 h-16 grayscale contrast-150 border-2 border-bg-dark">
+<img alt="Rider" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcc2cTrjtd2bhu9DBaaKzoA5r7X-hi5MmCOFNeyBbyZORV1-VleEYpwtYybmDTuJngGSy7JQFPYhwAedJR0AdQ7tqMWQXohgwsinc0yNLdgcDm-quDqmoZPgYo4X5BaevbJ62Sxrw7a6bQD1PrUbVQYMcKbCd1OgqhHAhJP4cIsKhqWio3LQZHjKWSEXt4vTxqIU3Nx1RnVYZvkd8yHO2DUD0CT57vPGRXU5tQlZd9x92yq904-7k46g">
+</div>
+<div class="text-left text-bg-dark">
+<p class="font-bold uppercase text-lg font-mono">A. VALVERDE</p>
+<p class="text-xs tracking-widest uppercase border-t border-bg-dark mt-1 pt-1 font-mono">PILOTO PRO // ID: 8993</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer: Minimalist Technical -->
+<footer class="bg-bg-dark px-10 py-16 border-t border-[#333]"><div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="col-span-1 md:col-span-1">
+<h2 class="text-white font-serif font-black tracking-tighter text-4xl uppercase mb-6">Astävik</h2>
+<p class="text-[#555] text-xs uppercase tracking-widest font-mono leading-relaxed">Ingeniería de alto rendimiento para ciclistas que no aceptan compromisos.</p>
+</div>
+<div>
+<h4 class="text-white font-serif font-bold text-xs uppercase tracking-widest border-b border-[#333] pb-2 mb-4">CATÁLOGO</h4>
+<div class="flex flex-col gap-2 text-[#555] text-xs uppercase tracking-widest font-mono">
+<a class="hover:text-brand-orange transition-colors" href="#">RUTA</a>
+<a class="hover:text-brand-orange transition-colors" href="#">GRAVEL</a>
+<a class="hover:text-brand-orange transition-colors" href="#">MONTAÑA</a>
+<a class="hover:text-brand-orange transition-colors" href="#">ACCESORIOS</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-serif font-bold text-xs uppercase tracking-widest border-b border-[#333] pb-2 mb-4">QUICK LINKS</h4>
+<div class="flex flex-col gap-2 text-[#555] text-xs uppercase tracking-widest font-mono">
+<a class="hover:text-brand-orange transition-colors" href="#">TALLER</a>
+<a class="hover:text-brand-orange transition-colors" href="#">BLOG</a>
+<a class="hover:text-brand-orange transition-colors" href="#">CONTACTO</a>
+<a class="hover:text-brand-orange transition-colors" href="#">MI CUENTA</a>
+</div>
+</div>
+<div>
+<h4 class="text-white font-serif font-bold text-xs uppercase tracking-widest border-b border-[#333] pb-2 mb-4">SOCIAL</h4>
+<div class="flex flex-col gap-3 text-[#555] text-xs uppercase tracking-widest font-mono">
+<a class="hover:text-brand-orange flex items-center gap-2" href="#"><span class="material-symbols-outlined text-lg">photo_camera</span> INSTAGRAM</a>
+<a class="hover:text-brand-orange flex items-center gap-2" href="#"><span class="material-symbols-outlined text-lg">play_circle</span> YOUTUBE</a>
+<a class="hover:text-brand-orange flex items-center gap-2" href="#"><span class="material-symbols-outlined text-lg">close</span> X / TWITTER</a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-[#333] flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-[#555] text-xs uppercase tracking-widest font-mono">© 2024. SIN PIEDAD.</p>
+<p class="text-[#333] text-[10px] font-mono tracking-widest">SYS_ID: ASTVK_2024_V1</p>
+</div></footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+</body></html>
