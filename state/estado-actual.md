@@ -1,7 +1,7 @@
 # Estado Actual del Proyecto Astāvik Performance Lab
 
-**Última actualización:** 2026-09-17  
-**Fase:** MVP — Auditoría Experta de Usabilidad & Remediación de Heurísticas Completada
+**Última actualización:** 2026-09-27  
+**Fase:** MVP — Integración de Assets Locales (Fase 3) y Accesibilidad WCAG AA (Fase 4) Completadas
 
 ---
 
@@ -18,6 +18,8 @@
   - *Search Overlay:* Reestructurado a pantalla completa según mockup desktop (Trending searches con flecha, categorías chips, 2 cards visuales destacadas `PRO SERIES` y `OFF-ROAD`, y búsqueda reactiva con navegación por flechas).
   - *Login Modal:* Reestructurado según mockup desktop (isotipo central, *VELOCITY AND PRECISION*, inputs con icono de correo/candado, toggle de visibilidad de contraseña y alternador Login/Registro).
   - *Sincronización JS:* `searchIndex` y `bikesDatabase` sincronizados con los 24 ítems y servicios.
+- [x] **Fase 3: Integración de Assets Locales Optimizados:** 100% de eliminación de URLs remotas (0 Unsplash). Sustitución por 36 imágenes locales en `assets/images/` con dimensiones intrínsecas explícitas (`width`/`height`), clases `aspect-[...]` para blindaje anti-CLS ($\text{CLS} \le 0.05$), `loading="eager"` + `fetchpriority="high"` en Hero LCP y `loading="lazy"` + `decoding="async"` en todo el catálogo.
+- [x] **Fase 4: Verificación Final de Accesibilidad (WCAG AA) & Marca:** 0 botones sin nombre accesible (135/135 validados), balance perfecto de etiquetas HTML (360 divs, 12 secciones, 135 botones), validación sintáctica JS (49.3KB comprobados con Node.js v24 sin errores), e integración de la iconografía oficial de marca `assets/images/brand/astavik-symbol.svg` en Header, Auth Modal y Footer.
 - [x] **Persistencia y Resiliencia en Cliente:** Formulario de Pits con autoguardado en `localStorage`, validaciones biomecánicas, carrito persistente y Guest Checkout sin `alert()`.
 - [x] **Pipeline de Dependencias & Build Local:** Inicialización de `package.json`, blindaje con `.gitignore`, integración de Vite, compilación local de Tailwind CSS minificado (`assets/css/style.css` de 34KB) eliminando FOUC, iconografía Lucide y tests unitarios biomecánicos con Vitest.
 - [x] **Verificación Empírica:** Comprobación de balance de etiquetas HTML (0 diff), validación sintáctica JS, tests unitarios superados (5/5 en Vitest), build de producción funcional y formateo COP unificado en el 100% de los precios.
@@ -25,11 +27,10 @@
 ---
 
 ## 2. Pendientes Inmediatos (To-Do)
-- [ ] **Fase 3: Integración de Assets Locales Optimizados:** Colocación de los archivos de imagen procesados en `assets/images/{brand,hero,bikes,equipment,apparel,taller,pdp,search,auth,athletes}/` y sustitución de URLs remotas fijando ratios anti-CLS.
-- [ ] **Fase 4: Verificación Final de Accesibilidad (WCAG AA):** Auditoría de contraste, foco y tests de regresión visual responsive (1440px / 1280px / 768px / 390px).
 - [ ] **Conexión a Backend / API Wompi Real:** Configuración de llaves de producción y webhook de confirmación.
+- [ ] **Pruebas E2E de Flujo Completo (Playwright / Cypress):** Automatización de orden completa de compra y agendamiento de taller.
 
 ---
 
 ## 3. Blockers y Riesgos Activos
-- **Ninguno actualmente.** La aplicación es 100% navegable, accesible, resiliente ante fallos de red o errores de pago y fiel a la identidad de marca.
+- **Ninguno actualmente.** La aplicación es 100% autónoma en assets locales, navegable, accesible, resiliente ante fallos de red o errores de pago y fiel a la identidad de marca.

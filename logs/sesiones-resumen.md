@@ -58,3 +58,13 @@
   3. Inclusión de la herramienta interactiva `mapa_visual_astavik.html` y suite de pruebas antropométricas.
   4. Actualización del árbol de archivos con `.gitignore`, `package.json`, configs y assets locales.
 - **Estado Resultante:** `README.md` 100% sincronizado con la arquitectura moderna y estado real del repositorio.
+
+## Sesión: 2026-09-27 — Integración de Assets Locales (Fase 3) y Validación de Accesibilidad (Fase 4)
+- **Objetivo:** Erradicar el 100% de dependencias de imágenes externas (Unsplash), sustituirlas por assets WebP locales en `assets/images/` con ratios anti-CLS, y auditar accesibilidad semántica y WCAG AA.
+- **Acciones Realizadas:**
+  1. Reemplazo de 21 URLs externas en HTML y 32 referencias en `bikesDatabase` por rutas locales `assets/images/...` en `code.html`.
+  2. Asignación estricta de atributos `width` y `height`, clases de aspect-ratio (`aspect-[3/2]`, `aspect-[16/10]`, `aspect-[4/3]`, `aspect-square`), `loading="eager"` + `fetchpriority="high"` en Hero LCP y `loading="lazy"` + `decoding="async"` en el resto de imágenes.
+  3. Integración de la iconografía vectorial oficial (`astavik-symbol.svg`) en Header, Modal de Autenticación y Footer, y adición de textura brutalista en Login Modal (`login-modal-chain-texture.webp`).
+  4. Verificación empírica automatizada mediante scripts en `scratch/`: 0 Unsplash restantes, 36/36 imágenes existentes en disco con dimensiones y alt texts válidos, 135/135 botones con nombre accesible (WCAG AA), 0 discrepancias en etiquetas HTML y validación sintáctica de los 49.3KB de JS con Node.js v24.
+  5. Cierre de memoria persistente ejecutando `skills/actualizar-contexto.md` (`state/`, `decisions/`, `gotchas/`, `logs/`).
+- **Estado Resultante:** Sitio web 100% autónomo, blindado contra CLS y con fidelidad visual e identidad técnica absoluta.

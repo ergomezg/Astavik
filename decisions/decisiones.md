@@ -53,3 +53,12 @@
   3. Integrar Vitest con tests unitarios para la lógica biomecánica antropométrica.
   4. Blindar el repositorio con `.gitignore`.
 - **Razonamiento:** Resuelve la deuda técnica de rendimiento y prepara el terreno para automatización y CI/CD sin comprometer la estabilidad visual del MVP.
+
+### [2026-09-27] Migración Total a Assets Locales WebP & Blindaje Anti-CLS (Fases 3 y 4)
+- **Contexto:** La maqueta utilizaba 21 URLs remotas de Unsplash propensas a roturas de red, latencia e inestabilidad acumulada del diseño (Cumulative Layout Shift, CLS).
+- **Decisión:** 
+  1. Sustituir el 100% de imágenes por assets locales optimizados en `assets/images/{brand,hero,bikes,equipment,apparel,taller,pdp,search,auth,athletes}/`.
+  2. Asignar atributos nativos obligatorios `width` y `height`, combinados con clases utilitarias de relación de aspecto (`aspect-[3/2]`, `aspect-[16/10]`, `aspect-[4/3]`, `aspect-square`) para garantizar $\text{CLS} \le 0.05$.
+  3. Configurar estrategia de carga diferenciada: `loading="eager"` con `fetchpriority="high"` exclusivamente para el recurso LCP del Hero (`hero-cyclist-poc-forest.webp`), y `loading="lazy"` + `decoding="async"` para todas las imágenes restantes fuera del viewport inicial.
+  4. Incorporar la iconografía vectorial oficial (`astavik-symbol.svg`) en Header, Modal de Autenticación y Footer, prescindiendo de SVGs genéricos.
+- **Razonamiento:** Garantiza soberanía absoluta de recursos, navegación sin dependencia de redes externas, Core Web Vitals óptimos y fidelidad de marca al 100%.

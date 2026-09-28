@@ -29,3 +29,8 @@ Este archivo recopila comportamientos inesperados, fallos sutiles y soluciones p
 - **Síntoma:** `npm error enoent ENOENT: no such file or directory, lstat 'C:\Users\...\AppData\Roaming\npm'` al ejecutar comandos de npm.
 - **Causa:** El directorio prefix de npm no se crea automáticamente en ciertas instalaciones limpias de Node.js en Windows.
 - **Solución:** Crear manualmente la carpeta `AppData\Roaming\npm` en el perfil del usuario antes de ejecutar operaciones de npm.
+
+### 7. Error de Codificación Unicode (cp1252) con el Carácter 'ā' en Consola Windows
+- **Síntoma:** `UnicodeEncodeError: 'charmap' codec can't encode character '\u0101'` al imprimir cadenas que contienen `Astāvik` en scripts de Python ejecutados desde PowerShell.
+- **Causa:** La consola estándar de Windows usa CP1252 por defecto, la cual no puede mapear el carácter latino extendido `ā` (U+0101).
+- **Solución:** Reconfigurar la salida estándar al inicio de scripts de testing con `sys.stdout.reconfigure(encoding='utf-8')` o escribir los reportes directamente a disco en UTF-8.
