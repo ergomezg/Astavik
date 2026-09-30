@@ -90,12 +90,14 @@
   3. *Reglas SPA en Vercel:* Creación de `vercel.json` con la regla canónica de reescritura SPA: `{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}`.
 - **Razonamiento:** Garantiza que Vercel sirva de inmediato la aplicación desde la raíz y resuelva cualquier subruta o recarga de URL en el cliente sin arrojar 404, cumpliendo con los estándares canónicos del ecosistema Vite + Vercel.
 
-### [2026-09-30] Arquitectura Responsive Mobile-First y Ergonomía Táctil
-- **Contexto:** Adaptación integral de Astāvik Performance Lab para dispositivos móviles, tablets y escritorios, manteniendo la estética brutalista Void Black y cero sobrecarga de dependencias.
+### [2026-09-30] Arquitectura Mobile-First y Adaptación Responsive Integral
+- **Contexto:** La plataforma Astāvik presentaba optimización enfocada en escritorio. Se requería una versión adaptativa fluida, ergonómica y minimalista en móviles (<640px), tablets (640-1024px) y desktop (>1024px) sin duplicación de componentes y respetando el sistema de diseño brutalista técnico.
 - **Decisión:**
-  1. *Navegación Móvil (Drawer Lateral):* Implementación de un panel deslizante lateral desde la derecha (`#mobile-drawer`, Opción 2 del usuario) con fondo `bg-void-black/95 backdrop-blur-xl`, enlaces con touch targets $\ge 48\text{ px}$ y botón de Login principal integrado.
-  2. *Filtros en PLP (Bottom Sheet Deslizable):* Disparador táctil `[ FILTROS Y ORDEN ]` en `< md` que abre un Bottom Sheet inferior (`#filters-bottom-sheet`, Opción 3 del usuario) sincronizado bidireccionalmente con los filtros desktop.
-  3. *Ergonomía Táctil WCAG AA:* Estandarización de píldoras de tallas antropométricas y de indumentaria a $\ge 44\times 44\text{ px}$, tanto en el marcado HTML como dinámicamente en JavaScript (`updateSizePillsUI` y `selectApparelSize`).
-  4. *Prevención de Auto-Zoom en iOS:* Inputs y selects configurados con tamaño base de fuente de $16\text{ px}$ (`text-base md:text-sm`) y altura mínima de $48\text{ px}$.
-- **Razonamiento:** Optimiza la usabilidad móvil sin comprometer la velocidad ni la fidelidad brutalista de la marca.
+  1. *Estrategia Mobile-First & Anti-Overflow:* Adición de reglas de contención de desbordamiento horizontal en raíz (`html, body { overflow-x: hidden; width: 100%; max-width: 100vw; }`) y utilidades `.no-scrollbar` para deslizadores horizontales táctiles.
+  2. *Touch Targets Ergonómicos ($\ge 44\times 44\text{ px}$):* Todos los botones, iconos de cabecera (búsqueda, carrito, hamburguesa), chips de talla y selectores fueron blindados a un tamaño táctil mínimo de 44px tanto en el marcado estático como en las funciones dinámicas de JS (`selectApparelSize` y `updateSizePillsUI`).
+  3. *Navegación Móvil Editorial Inmersiva:* Implementación de un overlay a pantalla completa (`#mobile-nav`, `bg-[#0A0A0A]/98 backdrop-blur-2xl`) con enlaces numerados masivos, CTA de acceso y metadatos de sede, aislando la navegación de cabecera a 3 controles táctiles esenciales en pantallas pequeñas.
+  4. *Bottom Sheet de Filtros (PLPs):* Colapso de filtros en móvil dentro de `#filter-bottom-sheet` con drag indicator, selección táctil de disciplina y sincronización bidireccional reactiva con los controles desktop.
+  5. *Prevención de Auto-Zoom en iOS:* Inputs y selects configurados con `text-base md:text-sm` (tamaño de fuente $\ge 16\text{ px}$ en móvil) para impedir el zoom involuntario del viewport en Safari iOS.
+- **Razonamiento:** Maximiza la ergonomía y usabilidad con una sola mano sin alterar la identidad de marca, reduce la fricción en el embudo de compra y garantiza total estabilidad visual sin regresiones funcionales.
+
 

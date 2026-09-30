@@ -43,13 +43,14 @@ Este archivo recopila comportamientos inesperados, fallos sutiles y soluciones p
   2. Configurar `base: '/'` y salida a `dist` en `vite.config.js` con `rollupOptions.input` apuntando a `index.html`.
   3. Crear `vercel.json` con la regla canónica de reescritura: `{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}`.
 
-### 9. Auto-Zoom Involuntario en iOS Safari al Enfocar Campos de Texto
-- **Síntoma:** En iPhone/iPad, tocar un input en formularios de Taller o Checkout produce un zoom automático de la pantalla que rompe el layout y requiere pellizcar para alejar.
-- **Causa:** Safari en iOS fuerza zoom automático en cualquier `<input>` o `<select>` cuya propiedad `font-size` calculada sea inferior a 16px.
-- **Solución:** Declarar `text-base md:text-sm` en todos los inputs y selects para garantizar 16px exactos en dispositivos móviles y 14px en pantallas de escritorio.
+### 9. Zoom Automático Involuntario en iOS Safari al Enfocar Inputs
+- **Síntoma:** Al tocar cualquier campo de texto o select en iPhone / Safari, el navegador hace zoom automático forzado hacia el input, rompiendo el encuadre del layout responsive.
+- **Causa:** WebKit / iOS Safari aplica zoom de aproximación obligatorio en campos de formulario con `font-size` menor a 16px (1rem).
+- **Solución:** Aplicar `text-base md:text-sm` (16px en móvil, 14px en escritorio) en todos los `<input>`, `<select>` y `<textarea>`.
 
-### 10. Regresión de Touch Targets en Selectores Dinámicos de Talla por Sobrescritura de Clases
-- **Síntoma:** Las píldoras de talla cumplían los 44px al cargar, pero al hacer clic o cambiar el slider biomecánico su altura se reducía a ~24px violando WCAG AA.
-- **Causa:** Las funciones JavaScript `updateSizePillsUI()` y `selectApparelSize()` asignaban cadenas fijas a `btn.className` omitiendo las clases utilitarias de ergonomía táctil.
-- **Solución:** Incluir obligatoriamente `min-w-[44px] min-h-[44px] flex items-center justify-center` en las cadenas de asignación de `className` en JavaScript.
+### 10. Reversión de Touch Targets a < 44px por Reasignación de `className` en JS Dinámico
+- **Síntoma:** Los botones de selección de talla de indumentaria y cuadro de bicicleta pierden sus dimensiones táctiles accesibles ($\ge 44\times 44\text{ px}$) tras ser presionados por el usuario.
+- **Causa:** Funciones JS como `selectApparelSize(btn, size)` y `updateSizePillsUI()` reescribían directamente `btn.className` con cadenas de clases fijas que omitían `min-w-[44px] min-h-[44px] flex items-center justify-center`.
+- **Solución:** Incluir siempre las clases de tamaño táctil mínimo (`min-w-[44px] min-h-[44px] flex items-center justify-center`) dentro de las cadenas de reasignación dinámica de clases en el script del cliente.
+
 
