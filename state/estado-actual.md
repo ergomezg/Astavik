@@ -1,7 +1,7 @@
 # Estado Actual del Proyecto Astāvik Performance Lab
 
-**Última actualización:** 2026-09-27  
-**Fase:** MVP — Integración de Assets Locales (Fase 3) y Accesibilidad WCAG AA (Fase 4) Completadas
+**Última actualización:** 2026-09-29  
+**Fase:** MVP — Estandarización Canónica de Cards de Producto y Assets (1200x800 px — 3:2) Completada
 
 ---
 
@@ -22,7 +22,9 @@
 - [x] **Fase 4: Verificación Final de Accesibilidad (WCAG AA) & Marca:** 0 botones sin nombre accesible (135/135 validados), balance perfecto de etiquetas HTML (360 divs, 12 secciones, 135 botones), validación sintáctica JS (49.3KB comprobados con Node.js v24 sin errores), e integración de la iconografía oficial de marca `assets/images/brand/astavik-symbol.svg` en Header, Auth Modal y Footer.
 - [x] **Persistencia y Resiliencia en Cliente:** Formulario de Pits con autoguardado en `localStorage`, validaciones biomecánicas, carrito persistente y Guest Checkout sin `alert()`.
 - [x] **Pipeline de Dependencias & Build Local:** Inicialización de `package.json`, blindaje con `.gitignore`, integración de Vite, compilación local de Tailwind CSS minificado (`assets/css/style.css` de 34KB) eliminando FOUC, iconografía Lucide y tests unitarios biomecánicos con Vitest.
-- [x] **Verificación Empírica:** Comprobación de balance de etiquetas HTML (0 diff), validación sintáctica JS, tests unitarios superados (5/5 en Vitest), build de producción funcional y formateo COP unificado en el 100% de los precios.
+- [x] **Ajustes Visuales y Cohesión de Marca ASTÄVIK (2026-09-28):** Unificación 100% del naming a `ASTÄVIK`, reducción de gap en logotipo (`gap-2`), eliminación de padding `p-4` (`p-0`) en los 22 contenedores de cards de producto sobre base `#141313`, remoción del atajo de teclado en header, Hero con "NADA" en blanco (`#FFFFFF`) y overlay con opacidad reducida en un 15%, y Footer actualizado con manifiesto estricto y sin icono de X/Twitter.
+- [x] **Estandarización Canónica de Cards de Producto y Assets (2026-09-29):** Estandarización de las 22 cards de producto a `relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center` con `width="1200" height="800"` y `object-contain object-center`; re-procesamiento Lanczos con Python PIL de los 18 archivos WebP de catálogo en disco a exactamente 1200x800 px (3:2) centrados sobre `#141313`, eliminando desalineaciones y saltos visuales en el grid.
+- [x] **Verificación Empírica:** Comprobación de dimensiones físicas de assets (100% en 1200x800), tests unitarios superados (5/5 en Vitest), build de producción Vite exitoso en 2.19s y formateo COP unificado en el 100% de los precios.
 
 ---
 

@@ -32,7 +32,7 @@ export function calculateBiomechanics(height, inseam) {
   };
 }
 
-describe('Astāvik Biomechanical Anthropometry Engine', () => {
+describe('ASTÄVIK Biomechanical Anthropometry Engine', () => {
   it('assigns XS for height < 165cm', () => {
     const res = calculateBiomechanics(160, 75);
     expect(res.sizeCode).toBe('XS');

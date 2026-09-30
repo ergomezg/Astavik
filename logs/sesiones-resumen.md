@@ -68,3 +68,26 @@
   4. Verificación empírica automatizada mediante scripts en `scratch/`: 0 Unsplash restantes, 36/36 imágenes existentes en disco con dimensiones y alt texts válidos, 135/135 botones con nombre accesible (WCAG AA), 0 discrepancias en etiquetas HTML y validación sintáctica de los 49.3KB de JS con Node.js v24.
   5. Cierre de memoria persistente ejecutando `skills/actualizar-contexto.md` (`state/`, `decisions/`, `gotchas/`, `logs/`).
 - **Estado Resultante:** Sitio web 100% autónomo, blindado contra CLS y con fidelidad visual e identidad técnica absoluta.
+
+## Sesión: 2026-09-28 — Ajustes Visuales de Marca ASTÄVIK, Cards de Producto, Header, Hero y Footer
+- **Objetivo:** Ejecutar serie de ajustes visuales específicos según especificación UI/UX: unificación de naming ASTÄVIK, compactación de logotipo, cards sin padding en base #141313, remoción de shortcut en header, Hero con "NADA" en blanco y overlay -15% opacidad, y Footer con nuevo manifiesto y sin X/Twitter.
+- **Acciones Realizadas:**
+  1. *Naming de Marca:* 100% de unificación a `ASTÄVIK` en `code.html`, `<title>`, alts, cards, base de datos JS y suite de tests.
+  2. *Logotipo:* Espaciado isotipo/marca reducido de `gap-3` a `gap-2` en Header, Search Modal y Footer.
+  3. *Cards de Producto:* Removido padding `p-4` (`p-0`) en los 22 contenedores de fotos de producto con fondo `#141313`, permitiendo que la foto ocupe todo el marco visible sin deformar ni recortar componentes esenciales.
+  4. *Header:* Removido badge visual `⌘K` en el botón de búsqueda y limpios atributos de accesibilidad.
+  5. *Hero Header:* Titular actualizado a `ELITE O<br><span class="text-white">NADA</span>.`; fotografía de ciclista con presencia incrementada (`opacity-55`) y overlay con opacidad reducida un 15% (`opacity-85`).
+  6. *Footer:* Manifiesto actualizado exactamente a `"BICICLETAS Y EQUIPAMIENTO DE ALTO RENDIMIENTO.<br>PARA CICLISTAS QUE NO ACEPTAN CONCESIONES"`; icono y enlace de "X / TWITTER" eliminado del bloque social.
+  7. *Verificación:* Build de producción (`npm run build`) exitoso en 1.85s, recompilación limpia de Tailwind CSS (`style.css`), balance perfecto de etiquetas HTML (361 divs, 135 buttons, 25 enlaces, 71 párrafos, 195 spans), sintaxis JS validada y 5/5 tests de Vitest aprobados.
+- **Estado Resultante:** Frontend de ASTÄVIK refinado con máxima precisión visual y fidelidad al sistema de diseño `DESIGN.md`.
+
+## Sesión: 2026-09-29 — Estandarización Canónica de Cards de Producto y Assets a 1200x800 px (3:2)
+- **Objetivo:** Estandarizar de forma consistente tanto los contenedores visuales de las 22 cards de producto como las imágenes al tamaño objetivo de 1200x800 px (3:2), eliminando cualquier inconsistencia visual en Home, Bicicletas, Equipamiento e Indumentaria.
+- **Acciones Realizadas:**
+  1. *Auditoría exhaustiva:* Detección de alturas fijas heterogéneas (`h-56` vs `h-64` vs `h-72`), mezclas de aspect ratios en DOM (`14:9`, `4:3`, `16:10`, `3:2`) e inconsistencias dimensionales en archivos físicos WebP.
+  2. *Normalización física de assets:* Procesamiento y re-escalado con Python PIL (remuestreo Lanczos) de los 18 archivos WebP de catálogo en disco a exactamente 1200x800 px centrados sobre ciclorama `#141313`, protegiendo componentes periféricos de cortes.
+  3. *Unificación de contenedores en code.html:* Sustitución de alturas fijas por `relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center` en las 22 cards de catálogo, garantizando simetría matemática fluida en cualquier breakpoint.
+  4. *Tratamiento uniforme de imagen:* Estandarización de `width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105"` en todas las cards y adición de `group` a los wrappers principales.
+  5. *Verificación empírica:* 100% de assets verificados físicamente a 1200x800 px; 5/5 pruebas unitarias de Vitest aprobadas; build de producción (`npm run build`) exitoso en 2.19s con recompilación limpia de Tailwind CSS.
+- **Estado Resultante:** Grid de productos 100% simétrico, sin saltos visuales ni Cumulative Layout Shift (CLS), alineado estrictamente con `DESIGN.md`.
+

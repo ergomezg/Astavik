@@ -62,3 +62,22 @@
   3. Configurar estrategia de carga diferenciada: `loading="eager"` con `fetchpriority="high"` exclusivamente para el recurso LCP del Hero (`hero-cyclist-poc-forest.webp`), y `loading="lazy"` + `decoding="async"` para todas las imágenes restantes fuera del viewport inicial.
   4. Incorporar la iconografía vectorial oficial (`astavik-symbol.svg`) en Header, Modal de Autenticación y Footer, prescindiendo de SVGs genéricos.
 - **Razonamiento:** Garantiza soberanía absoluta de recursos, navegación sin dependencia de redes externas, Core Web Vitals óptimos y fidelidad de marca al 100%.
+
+### [2026-09-28] Ajustes Visuales de Marca ASTÄVIK, Cards de Producto y Hero/Footer UI
+- **Contexto:** Refinamiento estético y ortotipográfico de la interfaz web para alcanzar máxima cohesión de marca y limpieza visual.
+- **Decisión:**
+  1. *Naming unificado:* Estandarización de todas las instancias del nombre de marca a `ASTÄVIK` (con diéresis `Ä`), en `<title>`, Header, Footer, Cards, repositorios JS (`bikesDatabase`, `searchIndex`), feedback y alts.
+  2. *Lockup de Logotipo:* Reducción de espaciado de `gap-3` a `gap-2` entre el isotipo vectorial y la tipografía en Header, Search Modal y Footer para una silueta más densa y compacta.
+  3. *Cards de Producto:* Eliminación de padding `p-4` (`p-0`) en los 22 contenedores de fotos de producto con base `#141313` (`bg-surface-dim`) para que la imagen aproveche el 100% del área visible sin alterar `object-contain` que protege las ruedas y manillar contra recortes indeseados.
+  4. *Header:* Eliminación del shortcut badge visual `⌘K` del botón de búsqueda y limpieza de labels.
+  5. *Hero Header:* Resaltado del titular brutalista aplicando `#FFFFFF` exclusivamente a la palabra `"NADA"` (`ELITE O<br><span class="text-white">NADA</span>.`), manteniendo el punto en naranja de marca. Reducción neta del 15% en la opacidad del overlay oscuro (`opacity-85` en gradientes y aumento a `opacity-55` en la fotografía subyacente).
+  6. *Footer:* Actualización del manifiesto a `"BICICLETAS Y EQUIPAMIENTO DE ALTO RENDIMIENTO.<br>PARA CICLISTAS QUE NO ACEPTAN CONCESIONES"`, y remoción definitiva del enlace de "X / TWITTER" en el bloque social.
+- **Razonamiento:** Eleva la cohesión estética con `DESIGN.md`, mejora el impacto visual del Hero y garantiza que el catálogo de bicicletas se visualice sin bordes residuales ni recortes mecánicos.
+
+### [2026-09-29] Estandarización Canónica de Cards de Producto y Assets a 1200x800 px (3:2)
+- **Contexto:** Las cards de producto a través de Home, Bicicletas, Equipamiento e Indumentaria presentaban alturas fijas dispares (`h-56` vs `h-64` vs `h-72`) y mezclas de aspect ratios (`14:9`, `4:3`, `16:10`, `3:2`), produciendo saltos visuales en el grid y falta de alineación entre tarjetas adyacentes.
+- **Decisión:**
+  1. *Estandarización de Contenedores:* Sustitución de alturas fijas por contenedores con relación de aspecto fluida bloqueada a 3:2 (`relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center`), unificando el fondo a `#141313` y asegurando padding perimetral de protección.
+  2. *Estandarización de Imágenes en DOM:* Todas las 22 etiquetas `<img>` de catálogo configuradas con `width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105"`, asegurando cero CLS y microinteracción uniforme al hover.
+  3. *Procesamiento y Normalización Física de Assets:* Estandarización de los 18 archivos WebP de catálogo en disco a exactamente 1200x800 px (3:2) con padding centrado sobre fondo `#141313` y remuestreo Lanczos de alta fidelidad, evitando cortes de componentes periféricos (ruedas, diales, tirantes).
+- **Razonamiento:** Erradica desalineaciones en cualquier breakpoint, cohesiona matemáticamente todas las categorías de producto y asegura máxima nitidez y rendimiento de carga.

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Astāvik Performance Lab — High-Performance Cycling</title>
+  <title>ASTÄVIK Performance Lab — High-Performance Cycling</title>
 
   <!-- Google Fonts: Montserrat (Display/Headlines/Data) & Inter (Body/UI) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
   <!-- Material Symbols Outlined -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
 
-  <!-- Astāvik Compiled & Purged Stylesheet (Zero-FOUC, Ultra-High Performance) -->
+  <!-- ASTÄVIK Compiled & Purged Stylesheet (Zero-FOUC, Ultra-High Performance) -->
   <link rel="stylesheet" href="assets/css/style.css">
 
   <!-- Tailwind CSS CDN (Fallback) -->
@@ -111,11 +111,11 @@
     <div class="max-w-[1440px] mx-auto px-4 md:px-8 h-20 flex items-center justify-between gap-4">
       
       <!-- LOGO -->
-      <a href="#" onclick="switchView('home'); return false;" class="flex items-center gap-3 group" aria-label="Astāvik Performance Lab - Inicio">
+      <a href="#" onclick="switchView('home'); return false;" class="flex items-center gap-2 group" aria-label="ASTÄVIK Performance Lab - Inicio">
         <div class="w-8 h-8 flex items-center justify-center transition-transform group-hover:scale-105">
-          <img src="assets/images/brand/astavik-symbol.svg" alt="Símbolo Astāvik" width="32" height="32" loading="eager" decoding="async" class="w-8 h-8 object-contain">
+          <img src="assets/images/brand/astavik-symbol.svg" alt="Símbolo ASTÄVIK" width="32" height="32" loading="eager" decoding="async" class="w-8 h-8 object-contain">
         </div>
-        <span class="font-display font-black text-2xl uppercase tracking-tighter text-white">ASTĀVIK</span>
+        <span class="font-display font-black text-2xl uppercase tracking-tighter text-white">ASTÄVIK</span>
       </a>
 
       <!-- DESKTOP NAVIGATION LINKS -->
@@ -129,9 +129,8 @@
       <!-- ACTION BUTTONS & UTILITIES -->
       <div class="flex items-center gap-3 md:gap-4">
         <!-- Search Trigger -->
-        <button onclick="toggleSearchModal(true)" aria-label="Abrir buscador global (Cmd+K)" title="Buscar (Cmd+K)" class="p-2 text-[#8E9192] hover:text-brand-orange transition-colors flex items-center gap-1 rounded-tech hover:bg-surface-low min-w-[40px] min-h-[40px] justify-center">
+        <button onclick="toggleSearchModal(true)" aria-label="Abrir buscador global" title="Buscar" class="p-2 text-[#8E9192] hover:text-brand-orange transition-colors flex items-center rounded-tech hover:bg-surface-low min-w-[40px] min-h-[40px] justify-center">
           <span class="material-symbols-outlined text-xl">search</span>
-          <span class="hidden md:inline-block text-[10px] font-mono border border-tech-border px-1.5 py-0.5 rounded text-[#8E9192]">⌘K</span>
         </button>
 
         <!-- Cart Trigger -->
@@ -172,14 +171,16 @@
       <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-tech-border py-16 md:py-24">
         <!-- Overlay Background Image -->
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/hero/hero-cyclist-poc-forest.webp" alt="Ciclista de élite en ruta de montaña Astāvik" width="2560" height="1440" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center contrast-125 opacity-40">
-          <div class="absolute inset-0 bg-gradient-to-t from-void-black via-void-black/60 to-transparent"></div>
-          <div class="absolute inset-0 bg-gradient-to-r from-void-black via-transparent to-void-black"></div>
+          <img src="assets/images/hero/hero-cyclist-poc-forest.webp" alt="Ciclista de élite en ruta de montaña ASTÄVIK" width="2560" height="1440" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center contrast-125 opacity-55">
+          <div class="absolute inset-0 opacity-85">
+            <div class="absolute inset-0 bg-gradient-to-t from-void-black via-void-black/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-void-black via-transparent to-void-black"></div>
+          </div>
         </div>
 
         <div class="relative z-10 max-w-[1440px] mx-auto px-6 md:px-12 w-full flex flex-col items-start justify-center">
           <h1 class="text-brand-orange font-display font-black leading-[0.85] tracking-tighter text-[14vw] lg:text-[11vw] uppercase mb-6 drop-shadow-2xl">
-            ELITE O<br>NADA.
+            ELITE O<br><span class="text-white">NADA</span>.
           </h1>
           
           <div class="max-w-xl border-l-2 border-brand-orange pl-6 my-4">
@@ -238,13 +239,13 @@
             
             <!-- Card 1 -->
             <div class="bg-surface-low rounded-card border border-tech-border p-6 flex flex-col justify-between hover:border-tech-border-bright transition-all group">
-              <div class="relative h-64 md:h-72 bg-surface-dim rounded-tech overflow-hidden mb-6 flex items-center justify-center p-4">
+              <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-6 p-4 flex items-center justify-center">
                 <span class="absolute top-3 left-3 bg-brand-orange text-void-black text-[10px] font-bold px-2 py-1 uppercase rounded-tech font-mono z-10">NUEVO LANZAMIENTO</span>
-                <img src="assets/images/bikes/bike-carbon-pro-studio.webp" alt="Astāvik Carbon Pro - Bicicleta de ruta aero" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2] group-hover:scale-105 transition-transform duration-300">
+                <img src="assets/images/bikes/bike-carbon-pro-studio.webp" alt="ASTÄVIK Carbon Pro - Bicicleta de ruta aero" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
               </div>
               <div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">ROAD / AERO // SPECS: CRBN-9</span>
-                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTĀVIK CARBON PRO</h3>
+                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTÄVIK CARBON PRO</h3>
                 <div class="flex items-center justify-between border-t border-tech-border pt-4">
                   <span class="text-white font-display font-bold text-xl md:text-2xl">$18.500.000 COP</span>
                   <button onclick="openPDP('carbon-pro')" class="border border-surface-high hover:border-white text-white text-xs uppercase font-bold tracking-widest px-4 py-2 rounded-tech hover:bg-white hover:text-void-black transition-colors font-mono">INSPECCIONAR</button>
@@ -254,12 +255,12 @@
 
             <!-- Card 2 -->
             <div class="bg-surface-low rounded-card border border-tech-border p-6 flex flex-col justify-between hover:border-tech-border-bright transition-all group">
-              <div class="relative h-64 md:h-72 bg-surface-dim rounded-tech overflow-hidden mb-6 flex items-center justify-center p-4">
-                <img src="assets/images/bikes/bike-gravel-x-studio.webp" alt="Astāvik Gravel X - Bicicleta gravel aventura" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2] group-hover:scale-105 transition-transform duration-300">
+              <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-6 p-4 flex items-center justify-center">
+                <img src="assets/images/bikes/bike-gravel-x-studio.webp" alt="ASTÄVIK Gravel X - Bicicleta gravel aventura" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
               </div>
               <div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">GRAVEL / ADVENTURE // SPECS: DIRT-X</span>
-                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTĀVIK GRAVEL X</h3>
+                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTÄVIK GRAVEL X</h3>
                 <div class="flex items-center justify-between border-t border-tech-border pt-4">
                   <span class="text-white font-display font-bold text-xl md:text-2xl">$15.600.000 COP</span>
                   <button onclick="openPDP('gravel-x')" class="border border-surface-high hover:border-white text-white text-xs uppercase font-bold tracking-widest px-4 py-2 rounded-tech hover:bg-white hover:text-void-black transition-colors font-mono">INSPECCIONAR</button>
@@ -269,12 +270,12 @@
 
             <!-- Card 3 -->
             <div class="bg-surface-low rounded-card border border-tech-border p-6 flex flex-col justify-between hover:border-tech-border-bright transition-all group">
-              <div class="relative h-64 md:h-72 bg-surface-dim rounded-tech overflow-hidden mb-6 flex items-center justify-center p-4">
-                <img src="assets/images/bikes/bike-xc-elite-studio.webp" alt="Astāvik XC Elite - Bicicleta MTB cross country" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2] group-hover:scale-105 transition-transform duration-300">
+              <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-6 p-4 flex items-center justify-center">
+                <img src="assets/images/bikes/bike-xc-elite-studio.webp" alt="ASTÄVIK XC Elite - Bicicleta MTB cross country" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
               </div>
               <div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">MTB / XC // SPECS: XC-ELT</span>
-                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTĀVIK XC ELITE</h3>
+                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTÄVIK XC ELITE</h3>
                 <div class="flex items-center justify-between border-t border-tech-border pt-4">
                   <span class="text-white font-display font-bold text-xl md:text-2xl">$11.900.000 COP</span>
                   <button onclick="openPDP('xc-elite')" class="border border-surface-high hover:border-white text-white text-xs uppercase font-bold tracking-widest px-4 py-2 rounded-tech hover:bg-white hover:text-void-black transition-colors font-mono">INSPECCIONAR</button>
@@ -284,12 +285,12 @@
 
             <!-- Card 4 -->
             <div class="bg-surface-low rounded-card border border-tech-border p-6 flex flex-col justify-between hover:border-tech-border-bright transition-all group">
-              <div class="relative h-64 md:h-72 bg-surface-dim rounded-tech overflow-hidden mb-6 flex items-center justify-center p-4">
-                <img src="assets/images/bikes/bike-enduro-pro-studio.webp" alt="Astāvik Enduro Pro - Bicicleta MTB enduro técnico" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2] group-hover:scale-105 transition-transform duration-300">
+              <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-6 p-4 flex items-center justify-center">
+                <img src="assets/images/bikes/bike-enduro-pro-studio.webp" alt="ASTÄVIK Enduro Pro - Bicicleta MTB enduro técnico" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
               </div>
               <div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">MTB / ENDURO // SPECS: END-PRO</span>
-                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTĀVIK ENDURO PRO</h3>
+                <h3 class="text-white font-display font-bold text-2xl uppercase mt-1 mb-4">ASTÄVIK ENDURO PRO</h3>
                 <div class="flex items-center justify-between border-t border-tech-border pt-4">
                   <span class="text-white font-display font-bold text-xl md:text-2xl">$15.600.000 COP</span>
                   <button onclick="openPDP('enduro-pro')" class="border border-surface-high hover:border-white text-white text-xs uppercase font-bold tracking-widest px-4 py-2 rounded-tech hover:bg-white hover:text-void-black transition-colors font-mono">INSPECCIONAR</button>
@@ -327,7 +328,7 @@
           </h2>
           <div class="flex items-center justify-center gap-4">
             <div class="w-14 h-14 bg-void-black rounded-full overflow-hidden border-2 border-void-black">
-              <img src="assets/images/athletes/athlete-valverde-avatar.webp" alt="A. Valverde - Piloto Pro Astāvik" width="274" height="274" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale aspect-square">
+              <img src="assets/images/athletes/athlete-valverde-avatar.webp" alt="A. Valverde - Piloto Pro ASTÄVIK" width="274" height="274" loading="lazy" decoding="async" class="w-full h-full object-cover grayscale aspect-square">
             </div>
             <div class="text-left font-mono">
               <p class="font-bold uppercase text-base tracking-wider">A. VALVERDE</p>
@@ -396,17 +397,17 @@
           <div id="bikes-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             
             <!-- Bike Item 1 -->
-            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="RUTA" data-price="16450000">
+            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="RUTA" data-price="16450000">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
                   <div class="absolute top-3 left-3 flex gap-2">
                     <span class="bg-brand-orange text-void-black text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">AERO</span>
                     <span class="bg-surface-high text-white text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">PRO</span>
                   </div>
-                  <img src="assets/images/bikes/bike-aeter-carbon-aero.webp" alt="Astāvik Aeter Carbon Aero" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[14/9]">
+                  <img src="assets/images/bikes/bike-aeter-carbon-aero.webp" alt="ASTÄVIK Aeter Carbon Aero" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">RUTA / CARBONO</span>
-                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTĀVIK AETER CARBON AERO</h3>
+                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTÄVIK AETER CARBON AERO</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Cuadro de carbono de alto módulo con integración total de cables y frenos hidráulicos.</p>
               </div>
               <div class="flex items-center justify-between border-t border-tech-border pt-4">
@@ -416,14 +417,14 @@
             </div>
 
             <!-- Bike Item 2 -->
-            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="RUTA" data-price="15520000">
+            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="RUTA" data-price="15520000">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
                   <span class="absolute top-3 left-3 bg-brand-orange text-void-black text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">PRO</span>
-                  <img src="assets/images/bikes/bike-aeter-carbon-prp.webp" alt="Astāvik Aeter Carbon PRP" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                  <img src="assets/images/bikes/bike-aeter-carbon-prp.webp" alt="ASTÄVIK Aeter Carbon PRP" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">RUTA / COMPACT</span>
-                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTĀVIK AETER CARBON PRP</h3>
+                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTÄVIK AETER CARBON PRP</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Optimización anatómica para ascensos y aceleración de respuesta inmediata.</p>
               </div>
               <div class="flex items-center justify-between border-t border-tech-border pt-4">
@@ -433,14 +434,14 @@
             </div>
 
             <!-- Bike Item 3 -->
-            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="GRAVEL" data-price="6480000">
+            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="GRAVEL" data-price="6480000">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
                   <span class="absolute top-3 left-3 bg-surface-high text-white text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">ALUMINIO AERO</span>
-                  <img src="assets/images/bikes/bike-aeter-al2.webp" alt="Astāvik Aeter AL2" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                  <img src="assets/images/bikes/bike-aeter-al2.webp" alt="ASTÄVIK Aeter AL2" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">GRAVEL / ALL-ROAD</span>
-                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTĀVIK AETER AL2</h3>
+                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTÄVIK AETER AL2</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Aleación aeroespacial ultra ligera resistente a impactos y vibración de terreno severo.</p>
               </div>
               <div class="flex items-center justify-between border-t border-tech-border pt-4">
@@ -450,17 +451,17 @@
             </div>
 
             <!-- Bike Item 4 -->
-            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="RUTA" data-price="22480000">
+            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="RUTA" data-price="22480000">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
                   <div class="absolute top-3 left-3 flex gap-2">
                     <span class="bg-brand-orange text-void-black text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">CHRONO</span>
                     <span class="bg-surface-high text-white text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">PRO</span>
                   </div>
-                  <img src="assets/images/bikes/bike-aeter-chrono-carbon.webp" alt="Astāvik Aeter Chrono Carbon" width="1400" height="900" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[14/9]">
+                  <img src="assets/images/bikes/bike-aeter-chrono-carbon.webp" alt="ASTÄVIK Aeter Chrono Carbon" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">TRIATLÓN / CHRONO</span>
-                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTĀVIK AETER CHRONO CARBON</h3>
+                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTÄVIK AETER CHRONO CARBON</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Diseño contra reloj con penetración de viento mínima y geometría de máxima agresión.</p>
               </div>
               <div class="flex items-center justify-between border-t border-tech-border pt-4">
@@ -470,17 +471,17 @@
             </div>
 
             <!-- Bike Item 5 (MTB / XC) -->
-            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="MONTAÑA" data-price="11900000">
+            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="MONTAÑA" data-price="11900000">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
                   <div class="absolute top-3 left-3 flex gap-2">
                     <span class="bg-brand-orange text-void-black text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">XC</span>
                     <span class="bg-surface-high text-white text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">ELITE</span>
                   </div>
-                  <img src="assets/images/bikes/bike-xc-elite-studio.webp" alt="Astāvik XC Elite" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                  <img src="assets/images/bikes/bike-xc-elite-studio.webp" alt="ASTÄVIK XC Elite" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">MONTAÑA / XC</span>
-                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTĀVIK XC ELITE</h3>
+                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTÄVIK XC ELITE</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Geometría moderna de Cross-Country con cuadro de carbono ultra reactivo y suspensión de 100mm.</p>
               </div>
               <div class="flex items-center justify-between border-t border-tech-border pt-4">
@@ -490,17 +491,17 @@
             </div>
 
             <!-- Bike Item 6 (MTB / Enduro) -->
-            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="MONTAÑA" data-price="15600000">
+            <div class="bike-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="MONTAÑA" data-price="15600000">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center">
                   <div class="absolute top-3 left-3 flex gap-2">
                     <span class="bg-brand-orange text-void-black text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">ENDURO</span>
                     <span class="bg-surface-high text-white text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">PRO</span>
                   </div>
-                  <img src="assets/images/bikes/bike-enduro-pro-studio.webp" alt="Astāvik Enduro Pro" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                  <img src="assets/images/bikes/bike-enduro-pro-studio.webp" alt="ASTÄVIK Enduro Pro" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <span class="text-brand-orange text-xs font-mono tracking-widest uppercase">MONTAÑA / ENDURO</span>
-                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTĀVIK ENDURO PRO</h3>
+                <h3 class="text-white font-display font-bold text-xl uppercase mt-1 mb-2">ASTÄVIK ENDURO PRO</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Ingeniería implacable para senderos de alto castigo y descensos técnicos con tracción continua.</p>
               </div>
               <div class="flex items-center justify-between border-t border-tech-border pt-4">
@@ -536,7 +537,7 @@
               EQUIPAMIENTO DE <span class="text-brand-orange block md:inline">PRECISIÓN</span>
             </h1>
             <p class="text-[#8E9192] text-base md:text-lg leading-relaxed">
-              La perfección técnica reside en los detalles. Cada accesorio en el ecosistema ASTĀVIK está diseñado bajo estrictos parámetros de ingeniería para optimizar la aerodinámica, minimizar el peso y maximizar la transferencia de potencia. Componentes de alto rendimiento para ciclistas que demandan resultados absolutos.
+              La perfección técnica reside en los detalles. Cada accesorio en el ecosistema ASTÄVIK está diseñado bajo estrictos parámetros de ingeniería para optimizar la aerodinámica, minimizar el peso y maximizar la transferencia de potencia. Componentes de alto rendimiento para ciclistas que demandan resultados absolutos.
             </p>
           </div>
 
@@ -561,18 +562,18 @@
           <div id="equip-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <!-- Item 1 -->
-            <div class="equip-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="ELECTRÓNICA">
+            <div class="equip-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="ELECTRÓNICA">
               <div>
-                <div class="relative h-56 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
                   <span class="absolute top-3 left-3 bg-brand-orange text-void-black text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">AERO</span>
-                  <img src="assets/images/equipment/equipment-core-gps-edge-pro.webp" alt="Ciclocomputador GPS Astāvik Core Edge Pro" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                  <img src="assets/images/equipment/equipment-core-gps-edge-pro.webp" alt="Ciclocomputador GPS ASTÄVIK Core Edge Pro" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
-                <h3 class="text-white font-display font-bold text-xl uppercase mb-2">ASTĀVIK CORE GPS EDGE PRO</h3>
+                <h3 class="text-white font-display font-bold text-xl uppercase mb-2">ASTÄVIK CORE GPS EDGE PRO</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Navegación aeroespacial, pantalla OLED de alto contraste y análisis de potencia dual integrado.</p>
               </div>
               <div class="flex items-center justify-between border-t border-tech-border pt-4">
                 <span class="text-brand-orange font-display font-bold text-xl">$2.850.000 COP</span>
-                <button onclick="addToCart('ASTĀVIK Core GPS Edge Pro', 2850000)" aria-label="Agregar ASTĀVIK Core GPS Edge Pro al arsenal" class="bg-brand-orange hover:bg-brand-orange-hover text-void-black text-xs font-bold font-mono px-4 py-2.5 min-h-[44px] rounded-tech transition-all flex items-center justify-center gap-1 uppercase tracking-wider hover:-translate-y-0.5">
+                <button onclick="addToCart('ASTÄVIK Core GPS Edge Pro', 2850000)" aria-label="Agregar ASTÄVIK Core GPS Edge Pro al arsenal" class="bg-brand-orange hover:bg-brand-orange-hover text-void-black text-xs font-bold font-mono px-4 py-2.5 min-h-[44px] rounded-tech transition-all flex items-center justify-center gap-1 uppercase tracking-wider hover:-translate-y-0.5">
                   <span class="material-symbols-outlined text-lg">add</span>
                   <span>AGREGAR</span>
                 </button>
@@ -580,10 +581,10 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="equip-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="COMPONENTES">
+            <div class="equip-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="COMPONENTES">
               <div>
-                <div class="relative h-56 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/equipment/equipment-potenciometro-dual.webp" alt="Potenciómetro Dual Axis Carbon para biela" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/equipment/equipment-potenciometro-dual.webp" alt="Potenciómetro Dual Axis Carbon para biela" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">POTENCIÓMETRO DUAL AXIS CARBON</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Precisión de +/- 1%. Construcción en carbono forjado para máxima rigidez y ligereza extrema.</p>
@@ -598,11 +599,11 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="equip-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="ELECTRÓNICA">
+            <div class="equip-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="ELECTRÓNICA">
               <div>
-                <div class="relative h-56 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
                   <span class="absolute top-3 left-3 bg-surface-high text-white text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">ESSENTIAL</span>
-                  <img src="assets/images/equipment/equipment-banda-cardiaca.webp" alt="Banda Cardíaca Biometric Sync ANT+/BLE" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                  <img src="assets/images/equipment/equipment-banda-cardiaca.webp" alt="Banda Cardíaca Biometric Sync ANT+/BLE" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">BANDA CARDÍACA BIOMETRIC SYNC</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Transmisión dual ANT+/BLE, tela técnica antibacterial y medición precisa en condiciones extremas.</p>
@@ -667,14 +668,14 @@
           <div id="apparel-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             <!-- Item 1 -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="NUCLEO">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="NUCLEO">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
                   <div class="absolute top-3 left-3 flex gap-2">
                     <span class="bg-brand-orange text-void-black text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">AERO</span>
                     <span class="bg-surface-high text-white text-[10px] font-bold px-2 py-0.5 rounded-tech font-mono">PRO</span>
                   </div>
-                  <img src="assets/images/apparel/apparel-aero-pro-jersey-v3.webp" alt="Aero Pro Jersey V3" width="1200" height="900" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[4/3]">
+                  <img src="assets/images/apparel/apparel-aero-pro-jersey-v3.webp" alt="Aero Pro Jersey V3" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">AERO PRO JERSEY V3</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Tejido acanalado de baja resistencia al aire y panal respirable de secado ultra rápido.</p>
@@ -701,10 +702,10 @@
             </div>
 
             <!-- Item 2 -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="NUCLEO">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="NUCLEO">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-bib-short-chamois.webp" alt="Bib-Short Endurance Carbon" width="800" height="500" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[16/10]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-bib-short-chamois.webp" alt="Bib-Short Endurance Carbon" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">BIB-SHORT ENDURANCE CARBON</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Badana de densidad ultra alta con inserciones de hilo de carbono para neutralizar vibraciones.</p>
@@ -731,10 +732,10 @@
             </div>
 
             <!-- Item 3 -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="PROTECCION">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="PROTECCION">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-aero-jersey-orange.webp" alt="Aero Long Sleeve V2 Naranja" width="800" height="500" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[16/10]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-aero-jersey-orange.webp" alt="Aero Long Sleeve V2 Naranja" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">AERO LONG SLEEVE V2 (NARANJA)</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Protección térmica liviana con tratamiento repelente al agua y detalles reflectivos 360°.</p>
@@ -761,10 +762,10 @@
             </div>
 
             <!-- Item 4 -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="PROTECCION">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="PROTECCION">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-aero-long-sleeve-blk.webp" alt="Aero Long Sleeve V2 Negro" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-aero-long-sleeve-blk.webp" alt="Aero Long Sleeve V2 Negro" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">AERO LONG SLEEVE V2 (NEGRO)</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Ingeniería aeroespacial textil en negro void con compresión micrométrica graduada.</p>
@@ -788,10 +789,10 @@
             </div>
 
             <!-- Item 5 -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="NUCLEO">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="NUCLEO">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-bib-short-lateral.webp" alt="Bib-Short Endurance Carbon Lateral" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-bib-short-lateral.webp" alt="Bib-Short Endurance Carbon Lateral" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">BIB-SHORT ENDURANCE CARBON (PANEL LATERAL)</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Corte anatómico articulado con paneles antiroce y terminaciones en corte láser.</p>
@@ -815,10 +816,10 @@
             </div>
 
             <!-- Item 6 -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="BASE">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="BASE">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-bib-short-rear.webp" alt="Bib-Short Endurance Carbon Dorsal" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-bib-short-rear.webp" alt="Bib-Short Endurance Carbon Dorsal" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">BIB-SHORT ENDURANCE CARBON (DORSAL MESH)</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Tirantes en malla técnica ultra elástica de ventilación continua para esfuerzos extremos.</p>
@@ -842,10 +843,10 @@
             </div>
 
             <!-- Item 7 (Guantes Aero Pro per Consultation 3) -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="EQUIPAMIENTO">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="EQUIPAMIENTO">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-gloves-technical.webp" alt="Guantes Aero Pro" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-gloves-technical.webp" alt="Guantes Aero Pro" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">GUANTES AERO PRO</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Palma en microfibra perforada con absorción de microvibraciones y corte aero sin velcro.</p>
@@ -867,10 +868,10 @@
             </div>
 
             <!-- Item 8 (Pantalón Enduro Technical per Consultation 3) -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="ESTILO DE VIDA">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="ESTILO DE VIDA">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-pants-enduro-orange.webp" alt="Pantalón Enduro Technical" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-pants-enduro-orange.webp" alt="Pantalón Enduro Technical" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">PANTALÓN ENDURO TECHNICAL</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Tejido Cordura resistente a la abrasión con elasticidad cuatridireccional para descenso agresivo.</p>
@@ -892,10 +893,10 @@
             </div>
 
             <!-- Item 9 (Jersey Radikal Red per Consultation 3) -->
-            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all" data-category="PROTECCION">
+            <div class="apparel-card bg-surface-low border border-tech-border rounded-card p-6 flex flex-col justify-between hover:border-brand-orange transition-all group" data-category="PROTECCION">
               <div>
-                <div class="relative h-64 bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
-                  <img src="assets/images/apparel/apparel-jersey-radikal-red.webp" alt="Jersey Manga Larga Radikal Red" width="800" height="533" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[3/2]">
+                <div class="relative w-full aspect-[3/2] bg-surface-dim rounded-tech mb-4 overflow-hidden p-4 flex items-center justify-center">
+                  <img src="assets/images/apparel/apparel-jersey-radikal-red.webp" alt="Jersey Manga Larga Radikal Red" width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105">
                 </div>
                 <h3 class="text-white font-display font-bold text-xl uppercase mb-2">JERSEY MANGA LARGA RADIKAL RED</h3>
                 <p class="text-[#8E9192] text-xs mb-4">Edición de alta visibilidad técnica en rojo profundo con control de humedad de grado profesional.</p>
@@ -949,11 +950,11 @@
             <!-- LEFT: GALLERY -->
             <div class="lg:col-span-7 flex flex-col gap-4">
               <div class="h-[400px] md:h-[500px] bg-surface-low rounded-card border border-tech-border overflow-hidden p-6 flex items-center justify-center">
-                <img id="pdp-main-image" src="assets/images/pdp/pdp-carbon-pro-lateral.webp" alt="Astāvik Carbon Pro - Vista Lateral de Competición" width="1600" height="1000" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[16/10]">
+                <img id="pdp-main-image" src="assets/images/pdp/pdp-carbon-pro-lateral.webp" alt="ASTÄVIK Carbon Pro - Vista Lateral de Competición" width="1600" height="1000" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[16/10]">
               </div>
               <div class="grid grid-cols-4 gap-4">
                 <div class="bg-surface-low border border-tech-border rounded-tech h-24 p-2 cursor-pointer hover:border-brand-orange" onclick="changePdpImage(this)">
-                  <img src="assets/images/pdp/pdp-carbon-pro-lateral.webp" alt="Vista lateral Astāvik" width="600" height="600" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-square">
+                  <img src="assets/images/pdp/pdp-carbon-pro-lateral.webp" alt="Vista lateral ASTÄVIK" width="600" height="600" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-square">
                 </div>
                 <div class="bg-surface-low border border-tech-border rounded-tech h-24 p-2 cursor-pointer hover:border-brand-orange" onclick="changePdpImage(this)">
                   <img src="assets/images/pdp/pdp-carbon-pro-cockpit.webp" alt="Cockpit integrado de carbono" width="600" height="600" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-square">
@@ -971,7 +972,7 @@
             <div class="lg:col-span-5 flex flex-col justify-between">
               <div>
                 <span id="pdp-category" class="text-brand-orange text-xs font-mono tracking-widest uppercase">ROAD / AERO // SPECS: CRBN-9</span>
-                <h1 id="pdp-title" class="text-white font-display font-black text-3xl md:text-5xl uppercase tracking-tighter my-2">ASTĀVIK CARBON PRO</h1>
+                <h1 id="pdp-title" class="text-white font-display font-black text-3xl md:text-5xl uppercase tracking-tighter my-2">ASTÄVIK CARBON PRO</h1>
                 <p id="pdp-price" class="text-brand-orange font-display font-bold text-3xl mb-6">$18.500.000 COP</p>
                 <p id="pdp-desc" class="text-[#8E9192] text-sm leading-relaxed mb-8 border-b border-tech-border pb-6">
                   Cuadro monocasco de carbono de alto módulo M40J ensamblado con grupo electrónico inalambrico. Cableado 100% interno y perfil aerodinámico testeado en túnel de viento.
@@ -1051,7 +1052,7 @@
       <!-- HERO TALLER (MANTENIMIENTO DE GRADO PROFESIONAL) -->
       <section class="relative min-h-[460px] md:min-h-[520px] flex items-center border-b border-tech-border overflow-hidden bg-void-black">
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/taller/taller-hero-mechanic-hands.webp" alt="Mantenimiento de Grado Profesional Astāvik" width="2560" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover object-center opacity-30 grayscale mix-blend-luminosity">
+          <img src="assets/images/taller/taller-hero-mechanic-hands.webp" alt="Mantenimiento de Grado Profesional ASTÄVIK" width="2560" height="1200" loading="lazy" decoding="async" class="w-full h-full object-cover object-center opacity-30 grayscale mix-blend-luminosity">
           <div class="absolute inset-0 bg-gradient-to-r from-void-black via-void-black/85 to-transparent"></div>
           <div class="absolute inset-0 bg-gradient-to-t from-void-black via-transparent to-void-black/40"></div>
         </div>
@@ -1169,7 +1170,7 @@
                   <span class="material-symbols-outlined text-2xl">location_on</span>
                 </div>
                 <div>
-                  <h3 class="text-white font-display font-bold text-sm uppercase tracking-wider mb-1">HQ ASTĀVIK BOGOTÁ</h3>
+                  <h3 class="text-white font-display font-bold text-sm uppercase tracking-wider mb-1">HQ ASTÄVIK BOGOTÁ</h3>
                   <p class="text-[#8E9192] text-xs leading-relaxed">
                     Cra 15 # 93-60, Local 102<br>
                     Bogotá, Colombia
@@ -1357,13 +1358,13 @@
       
       <!-- Top Bar: Brand + Close Button -->
       <div class="flex items-center justify-between pb-8">
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
           <div class="w-7 h-7 flex items-center justify-center text-brand-orange">
             <svg class="w-7 h-7 fill-current" viewBox="0 0 32 32">
               <path d="M16 2L2 28h8l6-11 6 11h8L16 2zm0 8l4.5 8.5h-9L16 10z"/>
             </svg>
           </div>
-          <span class="font-display font-black text-xl uppercase tracking-tighter text-white">ASTĀVIK</span>
+          <span class="font-display font-black text-xl uppercase tracking-tighter text-white">ASTÄVIK</span>
         </div>
         <button onclick="toggleSearchModal(false)" aria-label="Cerrar buscador" class="group text-[#8E9192] hover:text-white text-xs font-mono tracking-widest uppercase flex items-center gap-1.5 transition-colors cursor-pointer">
           <span>CLOSE</span>
@@ -1426,7 +1427,7 @@
             
             <!-- Featured Card 1: Carbon Pro R -->
             <div onclick="openPDP('carbon-pro'); toggleSearchModal(false)" class="relative group cursor-pointer aspect-[4/5] rounded-card overflow-hidden border border-tech-border bg-surface-low transition-all duration-300 hover:border-brand-orange">
-              <img src="assets/images/search/search-featured-carbon-pro-r.webp" alt="Astāvik Carbon Pro R" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
+              <img src="assets/images/search/search-featured-carbon-pro-r.webp" alt="ASTÄVIK Carbon Pro R" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
               <div class="absolute inset-0 bg-gradient-to-t from-void-black via-void-black/40 to-transparent"></div>
               
               <!-- Badge -->
@@ -1443,7 +1444,7 @@
 
             <!-- Featured Card 2: Gravel X Unbound -->
             <div onclick="openPDP('gravel-x'); toggleSearchModal(false)" class="relative group cursor-pointer aspect-[4/5] rounded-card overflow-hidden border border-tech-border bg-surface-low transition-all duration-300 hover:border-brand-orange">
-              <img src="assets/images/search/search-featured-gravel-x.webp" alt="Astāvik Gravel X Unbound" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
+              <img src="assets/images/search/search-featured-gravel-x.webp" alt="ASTÄVIK Gravel X Unbound" width="600" height="800" loading="lazy" decoding="async" class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105">
               <div class="absolute inset-0 bg-gradient-to-t from-void-black via-void-black/40 to-transparent"></div>
               
               <!-- Badge -->
@@ -1476,7 +1477,7 @@
 
       <!-- Bottom Hint -->
       <div class="pt-8 border-t border-tech-border/40 text-center text-[#8E9192] text-xs font-mono">
-        ASTĀVIK PERFORMANCE LAB // INSTANT IN-MEMORY TELEMETRY SEARCH
+        ASTÄVIK PERFORMANCE LAB // INSTANT IN-MEMORY TELEMETRY SEARCH
       </div>
 
     </div>
@@ -1497,7 +1498,7 @@
       <!-- Center Logo & Subtitle -->
       <div class="text-center mb-8">
         <div class="w-12 h-12 mx-auto mb-3 flex items-center justify-center">
-          <img src="assets/images/brand/astavik-symbol.svg" alt="Símbolo Astāvik" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain">
+          <img src="assets/images/brand/astavik-symbol.svg" alt="Símbolo ASTÄVIK" width="48" height="48" loading="lazy" decoding="async" class="w-12 h-12 object-contain">
         </div>
         <p class="text-[11px] font-mono tracking-widest text-[#8E9192] uppercase">VELOCITY AND PRECISION</p>
       </div>
@@ -1765,12 +1766,12 @@
     <div class="max-w-[1440px] mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
       
       <div>
-        <div class="flex items-center gap-3 mb-4">
-          <img src="assets/images/brand/astavik-symbol.svg" alt="Símbolo Astāvik" width="28" height="28" loading="lazy" decoding="async" class="w-7 h-7 object-contain">
-          <h2 class="text-white font-display font-black tracking-tighter text-3xl uppercase">ASTĀVIK</h2>
+        <div class="flex items-center gap-2 mb-4">
+          <img src="assets/images/brand/astavik-symbol.svg" alt="Símbolo ASTÄVIK" width="28" height="28" loading="lazy" decoding="async" class="w-7 h-7 object-contain">
+          <h2 class="text-white font-display font-black tracking-tighter text-3xl uppercase">ASTÄVIK</h2>
         </div>
         <p class="text-[#8E9192] leading-relaxed uppercase">
-          BICICLETAS Y EQUIPAMIENTO DE ALTO RENDIMIENTO.<br>PARA CICLISTAS QUE NO ACEPTAN COMPROMISOS.
+          BICICLETAS Y EQUIPAMIENTO DE ALTO RENDIMIENTO.<br>PARA CICLISTAS QUE NO ACEPTAN CONCESIONES
         </p>
       </div>
 
@@ -1800,14 +1801,13 @@
         <div class="flex flex-col gap-2 text-[#8E9192] uppercase">
           <a href="#" class="hover:text-brand-orange flex items-center gap-2"><span class="material-symbols-outlined text-sm">camera_alt</span> INSTAGRAM</a>
           <a href="#" class="hover:text-brand-orange flex items-center gap-2"><span class="material-symbols-outlined text-sm">play_circle</span> YOUTUBE</a>
-          <a href="#" class="hover:text-brand-orange flex items-center gap-2"><span class="material-symbols-outlined text-sm">close</span> X / TWITTER</a>
         </div>
       </div>
 
     </div>
 
     <div class="max-w-[1440px] mx-auto mt-12 pt-6 border-t border-tech-border flex flex-col md:flex-row justify-between items-center gap-4 text-[#8E9192]">
-      <p>© 2026 ASTĀVIK PERFORMANCE LAB. TODOS LOS DERECHOS RESERVADOS.</p>
+      <p>© 2026 ASTÄVIK PERFORMANCE LAB. TODOS LOS DERECHOS RESERVADOS.</p>
       <p class="text-[10px] tracking-widest">SYS_ID: ASTVK_2024_V1</p>
     </div>
   </footer>
@@ -1821,7 +1821,7 @@
 
     const bikesDatabase = {
       'carbon-pro': {
-        name: 'Astāvik Carbon Pro',
+        name: 'ASTÄVIK Carbon Pro',
         category: 'ROAD / AERO // SPECS: CRBN-9',
         price: '$18.500.000 COP',
         rawPrice: 18500000,
@@ -1834,7 +1834,7 @@
         ]
       },
       'aeter-aero': {
-        name: 'Astāvik Aeter Carbon Aero',
+        name: 'ASTÄVIK Aeter Carbon Aero',
         category: 'ROAD / AERO // SPECS: CRBN-8',
         price: '$16.450.000 COP',
         rawPrice: 16450000,
@@ -1847,7 +1847,7 @@
         ]
       },
       'aeter-prp': {
-        name: 'Astāvik Aeter Carbon PRP',
+        name: 'ASTÄVIK Aeter Carbon PRP',
         category: 'ROAD / COMPACT // SPECS: CRBN-7',
         price: '$15.520.000 COP',
         rawPrice: 15520000,
@@ -1860,7 +1860,7 @@
         ]
       },
       'gravel-x': {
-        name: 'Astāvik Gravel X',
+        name: 'ASTÄVIK Gravel X',
         category: 'GRAVEL / ADVENTURE // SPECS: DIRT-X',
         price: '$15.600.000 COP',
         rawPrice: 15600000,
@@ -1873,7 +1873,7 @@
         ]
       },
       'aeter-al2': {
-        name: 'Astāvik Aeter AL2',
+        name: 'ASTÄVIK Aeter AL2',
         category: 'GRAVEL / ALL-ROAD // SPECS: AL-7075',
         price: '$6.480.000 COP',
         rawPrice: 6480000,
@@ -1886,7 +1886,7 @@
         ]
       },
       'chrono-carbon': {
-        name: 'Astāvik Aeter Chrono Carbon',
+        name: 'ASTÄVIK Aeter Chrono Carbon',
         category: 'TRIATLÓN / CHRONO // SPECS: TT-AERO',
         price: '$22.480.000 COP',
         rawPrice: 22480000,
@@ -1899,7 +1899,7 @@
         ]
       },
       'xc-elite': {
-        name: 'Astāvik XC Elite',
+        name: 'ASTÄVIK XC Elite',
         category: 'MONTAÑA / XC // SPECS: XC-ELT',
         price: '$11.900.000 COP',
         rawPrice: 11900000,
@@ -1912,7 +1912,7 @@
         ]
       },
       'enduro-pro': {
-        name: 'Astāvik Enduro Pro',
+        name: 'ASTÄVIK Enduro Pro',
         category: 'MONTAÑA / ENDURO // SPECS: END-PRO',
         price: '$15.600.000 COP',
         rawPrice: 15600000,
@@ -1932,15 +1932,15 @@
     let currentBikeFilter = 'ALL';
 
     const searchIndex = [
-      { name: 'Astāvik Carbon Pro', category: 'Bicicletas', sub: 'Ruta', price: '$18.500.000 COP', type: 'bike', id: 'carbon-pro' },
-      { name: 'Astāvik Aeter Carbon Aero', category: 'Bicicletas', sub: 'Ruta', price: '$16.450.000 COP', type: 'bike', id: 'aeter-aero' },
-      { name: 'Astāvik Aeter Carbon PRP', category: 'Bicicletas', sub: 'Ruta', price: '$15.520.000 COP', type: 'bike', id: 'aeter-prp' },
-      { name: 'Astāvik Gravel X', category: 'Bicicletas', sub: 'Gravel', price: '$15.600.000 COP', type: 'bike', id: 'gravel-x' },
-      { name: 'Astāvik Aeter AL2', category: 'Bicicletas', sub: 'Gravel', price: '$6.480.000 COP', type: 'bike', id: 'aeter-al2' },
-      { name: 'Astāvik Aeter Chrono Carbon', category: 'Bicicletas', sub: 'Ruta', price: '$22.480.000 COP', type: 'bike', id: 'chrono-carbon' },
-      { name: 'Astāvik XC Elite', category: 'Bicicletas', sub: 'Montaña', price: '$11.900.000 COP', type: 'bike', id: 'xc-elite' },
-      { name: 'Astāvik Enduro Pro', category: 'Bicicletas', sub: 'Montaña', price: '$15.600.000 COP', type: 'bike', id: 'enduro-pro' },
-      { name: 'Astāvik Core GPS Edge Pro', category: 'Equipamiento', sub: 'Electrónica', price: '$2.850.000 COP', type: 'equipment', rawPrice: 2850000 },
+      { name: 'ASTÄVIK Carbon Pro', category: 'Bicicletas', sub: 'Ruta', price: '$18.500.000 COP', type: 'bike', id: 'carbon-pro' },
+      { name: 'ASTÄVIK Aeter Carbon Aero', category: 'Bicicletas', sub: 'Ruta', price: '$16.450.000 COP', type: 'bike', id: 'aeter-aero' },
+      { name: 'ASTÄVIK Aeter Carbon PRP', category: 'Bicicletas', sub: 'Ruta', price: '$15.520.000 COP', type: 'bike', id: 'aeter-prp' },
+      { name: 'ASTÄVIK Gravel X', category: 'Bicicletas', sub: 'Gravel', price: '$15.600.000 COP', type: 'bike', id: 'gravel-x' },
+      { name: 'ASTÄVIK Aeter AL2', category: 'Bicicletas', sub: 'Gravel', price: '$6.480.000 COP', type: 'bike', id: 'aeter-al2' },
+      { name: 'ASTÄVIK Aeter Chrono Carbon', category: 'Bicicletas', sub: 'Ruta', price: '$22.480.000 COP', type: 'bike', id: 'chrono-carbon' },
+      { name: 'ASTÄVIK XC Elite', category: 'Bicicletas', sub: 'Montaña', price: '$11.900.000 COP', type: 'bike', id: 'xc-elite' },
+      { name: 'ASTÄVIK Enduro Pro', category: 'Bicicletas', sub: 'Montaña', price: '$15.600.000 COP', type: 'bike', id: 'enduro-pro' },
+      { name: 'ASTÄVIK Core GPS Edge Pro', category: 'Equipamiento', sub: 'Electrónica', price: '$2.850.000 COP', type: 'equipment', rawPrice: 2850000 },
       { name: 'Potenciómetro Dual Axis Carbon', category: 'Equipamiento', sub: 'Componentes', price: '$4.100.000 COP', type: 'equipment', rawPrice: 4100000 },
       { name: 'Banda Cardíaca Biometric Sync', category: 'Equipamiento', sub: 'Electrónica', price: '$420.000 COP', type: 'equipment', rawPrice: 420000 },
       { name: 'Aero Pro Jersey V3', category: 'Indumentaria', sub: 'El Núcleo', price: '$450.000 COP', type: 'apparel', rawPrice: 450000 },
@@ -2421,7 +2421,7 @@
 
         const subtotal = cart.reduce((acc, i) => acc + (i.price * (i.qty || 1)), 0);
         const orderNum = 'ASTVK-' + Math.floor(100000 + Math.random() * 900000);
-        const clientName = document.getElementById('chk-name').value || 'Ciclista Astāvik';
+        const clientName = document.getElementById('chk-name').value || 'Ciclista ASTÄVIK';
         const clientCity = document.getElementById('chk-city').value || 'Bogotá D.C.';
 
         if (forcedStatus === 'APPROVED') {
@@ -2630,7 +2630,7 @@
       // Build Google Calendar Link with dates
       const dateClean = dateVal.replace(/-/g, '');
       const gcalDates = `${dateClean}T130000Z/${dateClean}T150000Z`;
-      const title = encodeURIComponent(`Cita Pits Astāvik: ${protocol}`);
+      const title = encodeURIComponent(`Cita Pits ASTÄVIK: ${protocol}`);
       const details = encodeURIComponent(`Reserva para ${clientBike}. Turno: ${slotVal}. Cra 15 # 93-60, Local 102.`);
       const location = encodeURIComponent('Cra 15 # 93-60, Local 102, Bogotá, Colombia');
       const gcal = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${title}&dates=${gcalDates}&details=${details}&location=${location}`;
@@ -2660,7 +2660,7 @@
       const icsLines = [
         'BEGIN:VCALENDAR',
         'VERSION:2.0',
-        'PRODID:-//Astavik Performance Lab//Pits Appointment//ES',
+        'PRODID:-//ASTÄVIK Performance Lab//Pits Appointment//ES',
         'CALSCALE:GREGORIAN',
         'METHOD:PUBLISH',
         'BEGIN:VEVENT',
@@ -2668,7 +2668,7 @@
         'DTSTAMP:' + nowStamp,
         'DTSTART:' + dateClean + 'T130000Z',
         'DTEND:' + dateClean + 'T150000Z',
-        'SUMMARY:Ingreso a Pits - Astāvik (' + protocol + ')',
+        'SUMMARY:Ingreso a Pits - ASTÄVIK (' + protocol + ')',
         'DESCRIPTION:Turno: ' + slot + '. Sede HQ Bogotá: Cra 15 # 93-60, Local 102.',
         'LOCATION:Cra 15 # 93-60\\, Local 102\\, Bogotá\\, Colombia',
         'STATUS:CONFIRMED',
@@ -2882,9 +2882,9 @@
       e.preventDefault();
       const feedback = document.getElementById('auth-feedback');
       if (authMode === 'login') {
-        feedback.innerText = 'Sesión iniciada correctamente en Astāvik Performance Lab.';
+        feedback.innerText = 'Sesión iniciada correctamente en ASTÄVIK Performance Lab.';
       } else {
-        feedback.innerText = 'Cuenta creada y vinculada con telemetría Astāvik.';
+        feedback.innerText = 'Cuenta creada y vinculada con telemetría ASTÄVIK.';
       }
       feedback.classList.remove('hidden');
       setTimeout(() => {

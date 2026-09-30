@@ -7,10 +7,10 @@ export default defineConfig({
   },
   plugins: [
     {
-      name: 'rewrite-root-to-code',
+      name: 'html-fallback',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          if (req.url === '/' || req.url === '/index.html') {
+          if (req.url === '/' || req.url === '') {
             req.url = '/code.html';
           }
           next();
