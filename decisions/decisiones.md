@@ -90,3 +90,12 @@
   3. *Reglas SPA en Vercel:* Creación de `vercel.json` con la regla canónica de reescritura SPA: `{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}`.
 - **Razonamiento:** Garantiza que Vercel sirva de inmediato la aplicación desde la raíz y resuelva cualquier subruta o recarga de URL en el cliente sin arrojar 404, cumpliendo con los estándares canónicos del ecosistema Vite + Vercel.
 
+### [2026-09-30] Arquitectura Responsive Mobile-First y Ergonomía Táctil
+- **Contexto:** Adaptación integral de Astāvik Performance Lab para dispositivos móviles, tablets y escritorios, manteniendo la estética brutalista Void Black y cero sobrecarga de dependencias.
+- **Decisión:**
+  1. *Navegación Móvil (Drawer Lateral):* Implementación de un panel deslizante lateral desde la derecha (`#mobile-drawer`, Opción 2 del usuario) con fondo `bg-void-black/95 backdrop-blur-xl`, enlaces con touch targets $\ge 48\text{ px}$ y botón de Login principal integrado.
+  2. *Filtros en PLP (Bottom Sheet Deslizable):* Disparador táctil `[ FILTROS Y ORDEN ]` en `< md` que abre un Bottom Sheet inferior (`#filters-bottom-sheet`, Opción 3 del usuario) sincronizado bidireccionalmente con los filtros desktop.
+  3. *Ergonomía Táctil WCAG AA:* Estandarización de píldoras de tallas antropométricas y de indumentaria a $\ge 44\times 44\text{ px}$, tanto en el marcado HTML como dinámicamente en JavaScript (`updateSizePillsUI` y `selectApparelSize`).
+  4. *Prevención de Auto-Zoom en iOS:* Inputs y selects configurados con tamaño base de fuente de $16\text{ px}$ (`text-base md:text-sm`) y altura mínima de $48\text{ px}$.
+- **Razonamiento:** Optimiza la usabilidad móvil sin comprometer la velocidad ni la fidelidad brutalista de la marca.
+
