@@ -91,3 +91,13 @@
   5. *Verificación empírica:* 100% de assets verificados físicamente a 1200x800 px; 5/5 pruebas unitarias de Vitest aprobadas; build de producción (`npm run build`) exitoso en 2.19s con recompilación limpia de Tailwind CSS.
 - **Estado Resultante:** Grid de productos 100% simétrico, sin saltos visuales ni Cumulative Layout Shift (CLS), alineado estrictamente con `DESIGN.md`.
 
+## Sesión: 2026-09-30 — Configuración y Blindaje de Producción para Vercel (Solución 404 NOT_FOUND)
+- **Objetivo:** Preparar el proyecto para su despliegue en Vercel, solucionando el error 404 (NOT_FOUND) mediante la reescritura canónica SPA y la estandarización del entry point de Vite a `index.html`.
+- **Acciones Realizadas:**
+  1. *Regla de reescritura canónica:* Creación de `vercel.json` en la raíz con reescritura global `{ "source": "/(.*)", "destination": "/index.html" }`.
+  2. *Auditoría y estandarización del entry point:* Verificación y creación de `index.html` en la raíz (conservando `code.html`).
+  3. *Auditoría de Vite y Build:* Modificación de `vite.config.js` incorporando `base: '/'`, `outDir: 'dist'` y soporte de entradas múltiples (`main: './index.html'` y `code: './code.html'`). Validación de `package.json` confirmando pipeline `npm run build:css && vite build`.
+  4. *Verificación empírica local:* Ejecución de `npm run build` completada con éxito en 1.67s, verificando generación simultánea de `dist/index.html`, `dist/code.html` y assets optimizados; ejecución de tests con Vitest aprobada al 100% (5/5).
+- **Estado Resultante:** Proyecto 100% listo para despliegue en Vercel con resolución de rutas SPA sin riesgo de errores 404.
+
+

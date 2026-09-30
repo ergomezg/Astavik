@@ -81,3 +81,12 @@
   2. *Estandarización de Imágenes en DOM:* Todas las 22 etiquetas `<img>` de catálogo configuradas con `width="1200" height="800" loading="lazy" decoding="async" class="w-full h-full object-contain object-center transition-transform duration-300 group-hover:scale-105"`, asegurando cero CLS y microinteracción uniforme al hover.
   3. *Procesamiento y Normalización Física de Assets:* Estandarización de los 18 archivos WebP de catálogo en disco a exactamente 1200x800 px (3:2) con padding centrado sobre fondo `#141313` y remuestreo Lanczos de alta fidelidad, evitando cortes de componentes periféricos (ruedas, diales, tirantes).
 - **Razonamiento:** Erradica desalineaciones en cualquier breakpoint, cohesiona matemáticamente todas las categorías de producto y asegura máxima nitidez y rendimiento de carga.
+
+### [2026-09-30] Configuración Canónica de Producción para Vercel y Vite SPA
+- **Contexto:** Se detectó error 404 (NOT_FOUND) al desplegar la aplicación en Vercel. La compilación dependía de `code.html` como punto de entrada, produciendo únicamente `dist/code.html` en vez de `dist/index.html`, y el proyecto carecía de reglas de reescritura para rutas SPA.
+- **Decisión:**
+  1. *Punto de Entrada Canónico:* Creación de `index.html` en la raíz del proyecto (conservando `code.html` para trazabilidad y compatibilidad hacia atrás).
+  2. *Auditoría de Vite:* Configuración explícita de `base: '/'`, `build.outDir: 'dist'` y soporte multientrada en `rollupOptions.input` (`main: './index.html'` y `code: './code.html'`) en `vite.config.js`.
+  3. *Reglas SPA en Vercel:* Creación de `vercel.json` con la regla canónica de reescritura SPA: `{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}`.
+- **Razonamiento:** Garantiza que Vercel sirva de inmediato la aplicación desde la raíz y resuelva cualquier subruta o recarga de URL en el cliente sin arrojar 404, cumpliendo con los estándares canónicos del ecosistema Vite + Vercel.
+

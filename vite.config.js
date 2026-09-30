@@ -1,27 +1,17 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
+  base: '/',
   server: {
     port: 5173,
-    open: '/code.html'
+    open: true
   },
-  plugins: [
-    {
-      name: 'html-fallback',
-      configureServer(server) {
-        server.middlewares.use((req, res, next) => {
-          if (req.url === '/' || req.url === '') {
-            req.url = '/code.html';
-          }
-          next();
-        });
-      }
-    }
-  ],
   build: {
+    outDir: 'dist',
     rollupOptions: {
       input: {
-        main: './code.html'
+        main: './index.html',
+        code: './code.html'
       }
     }
   }

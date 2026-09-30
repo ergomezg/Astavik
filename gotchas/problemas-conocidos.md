@@ -34,3 +34,12 @@ Este archivo recopila comportamientos inesperados, fallos sutiles y soluciones p
 - **Síntoma:** `UnicodeEncodeError: 'charmap' codec can't encode character '\u0101'` al imprimir cadenas que contienen `Astāvik` en scripts de Python ejecutados desde PowerShell.
 - **Causa:** La consola estándar de Windows usa CP1252 por defecto, la cual no puede mapear el carácter latino extendido `ā` (U+0101).
 - **Solución:** Reconfigurar la salida estándar al inicio de scripts de testing con `sys.stdout.reconfigure(encoding='utf-8')` o escribir los reportes directamente a disco en UTF-8.
+
+### 8. Error 404 (NOT_FOUND) en Despliegues de Vercel por Ausencia de index.html y Reglas SPA
+- **Síntoma:** Al desplegar en Vercel, ingresar a la URL raíz o a cualquier ruta devuelve HTTP 404 NOT_FOUND.
+- **Causa:** El proyecto utilizaba `code.html` como punto de entrada de Vite, por lo que el build generaba únicamente `dist/code.html` y no `dist/index.html`. Vercel busca por defecto `index.html` en el directorio de salida (`dist`) y requiere reescritura para SPAs.
+- **Solución:** 
+  1. Mantener `index.html` canónico en la raíz del proyecto.
+  2. Configurar `base: '/'` y salida a `dist` en `vite.config.js` con `rollupOptions.input` apuntando a `index.html`.
+  3. Crear `vercel.json` con la regla canónica de reescritura: `{"rewrites": [{"source": "/(.*)", "destination": "/index.html"}]}`.
+

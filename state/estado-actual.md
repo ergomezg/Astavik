@@ -1,7 +1,7 @@
 # Estado Actual del Proyecto Astāvik Performance Lab
 
-**Última actualización:** 2026-09-29  
-**Fase:** MVP — Estandarización Canónica de Cards de Producto y Assets (1200x800 px — 3:2) Completada
+**Última actualización:** 2026-09-30  
+**Fase:** MVP — Preparación y Blindaje de Producción para Vercel (SPA Routing & Vite Entry) Completada
 
 ---
 
@@ -24,7 +24,8 @@
 - [x] **Pipeline de Dependencias & Build Local:** Inicialización de `package.json`, blindaje con `.gitignore`, integración de Vite, compilación local de Tailwind CSS minificado (`assets/css/style.css` de 34KB) eliminando FOUC, iconografía Lucide y tests unitarios biomecánicos con Vitest.
 - [x] **Ajustes Visuales y Cohesión de Marca ASTÄVIK (2026-09-28):** Unificación 100% del naming a `ASTÄVIK`, reducción de gap en logotipo (`gap-2`), eliminación de padding `p-4` (`p-0`) en los 22 contenedores de cards de producto sobre base `#141313`, remoción del atajo de teclado en header, Hero con "NADA" en blanco (`#FFFFFF`) y overlay con opacidad reducida en un 15%, y Footer actualizado con manifiesto estricto y sin icono de X/Twitter.
 - [x] **Estandarización Canónica de Cards de Producto y Assets (2026-09-29):** Estandarización de las 22 cards de producto a `relative w-full aspect-[3/2] bg-surface-dim rounded-tech overflow-hidden mb-4 p-4 flex items-center justify-center` con `width="1200" height="800"` y `object-contain object-center`; re-procesamiento Lanczos con Python PIL de los 18 archivos WebP de catálogo en disco a exactamente 1200x800 px (3:2) centrados sobre `#141313`, eliminando desalineaciones y saltos visuales en el grid.
-- [x] **Verificación Empírica:** Comprobación de dimensiones físicas de assets (100% en 1200x800), tests unitarios superados (5/5 en Vitest), build de producción Vite exitoso en 2.19s y formateo COP unificado en el 100% de los precios.
+- [x] **Configuración y Despliegue en Vercel (2026-09-30):** Creación de `vercel.json` con reescritura canónica SPA a `/index.html`, establecimiento de `index.html` canónico en la raíz, configuración de `base: '/'` y salida `dist` con soporte multi-entry (`index.html` + `code.html`) en `vite.config.js`, mitigando fallos 404 (NOT_FOUND).
+- [x] **Verificación Empírica:** Comprobación de dimensiones físicas de assets (100% en 1200x800), tests unitarios superados (5/5 en Vitest), build de producción Vite exitoso en 1.67s generando `dist/index.html` y formateo COP unificado en el 100% de los precios.
 
 ---
 
