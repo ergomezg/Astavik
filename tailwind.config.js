@@ -6,7 +6,9 @@ export default {
   content: [
     "./code.html",
     "./index.html",
-    "./src/**/*.{html,js,ts,jsx,tsx}"
+    "./src/**/*.{html,js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}"
   ],
   darkMode: "class",
   theme: {

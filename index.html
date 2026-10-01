@@ -235,7 +235,7 @@
       <section class="relative min-h-[75vh] sm:min-h-[85vh] flex items-center justify-center overflow-hidden border-b border-tech-border py-12 sm:py-16 md:py-24">
         <!-- Overlay Background Image -->
         <div class="absolute inset-0 z-0">
-          <img src="assets/images/hero/hero-cyclist-poc-forest.webp" alt="Ciclista de élite en ruta de montaña ASTÄVIK" width="2560" height="1440" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-center contrast-125 opacity-55">
+          <img src="assets/images/hero/hero-cyclist-poc-forest.webp" alt="Ciclista de élite en ruta de montaña ASTÄVIK" width="2560" height="1440" loading="eager" fetchpriority="high" decoding="async" class="w-full h-full object-cover object-[70%_center] sm:object-[65%_center] lg:object-center contrast-125 opacity-55">
           <div class="absolute inset-0 opacity-85">
             <div class="absolute inset-0 bg-gradient-to-t from-void-black via-void-black/60 to-transparent"></div>
             <div class="absolute inset-0 bg-gradient-to-r from-void-black via-transparent to-void-black"></div>
@@ -1014,106 +1014,323 @@
     </div>
 
 
-    <!-- ==================== VIEW 5: PDP WITH ANTHROPOMETRIC SELECTOR ==================== -->
+    <!-- ==================== VIEW 5: PDP WITH HIGH-FIDELITY VIEWER & CAD ARCHITECTURE ==================== -->
     <div id="view-pdp" class="view-panel hidden">
-      <section class="py-12 md:py-20 border-b border-tech-border">
-        <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+      
+      <!-- BREADCRUMBS & FRAME MATRIX METADATA BAR -->
+      <div class="w-full border-b border-tech-border bg-surface-dim/50 py-3">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 flex flex-col md:flex-row md:items-center justify-between gap-2 text-[11px] sm:text-xs font-mono">
+          <div class="flex items-center flex-wrap gap-2 text-[#8E9192]">
+            <button onclick="switchView('home')" class="hover:text-white transition-colors">Inicio</button>
+            <span>/</span>
+            <button onclick="switchView('bicicletas')" class="hover:text-white transition-colors">Bicicletas</button>
+            <span>/</span>
+            <span id="pdp-breadcrumb-category" class="text-[#C4C7C7]">Ruta</span>
+            <span>/</span>
+            <span id="pdp-breadcrumb-name" class="text-white font-medium">Astāvik Carbon Pro 2025</span>
+            <span id="pdp-sku-badge" class="ml-1.5 px-2 py-0.5 rounded-sm bg-brand-orange/15 border border-brand-orange/40 text-brand-orange text-[10px] font-bold tracking-wider">
+              ID: AST-CP25
+            </span>
+          </div>
+
+          <div class="text-[#8E9192] tracking-wider text-[11px] flex items-center gap-1.5">
+            <span className="text-[#5F5E5E]">FRAME MATRIX:</span>
+            <span id="pdp-frame-matrix" class="text-[#C4C7C7] font-semibold">AETHER-HM05 - TORAY T1100G CARBON</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- MAIN PRODUCT COCKPIT (GALLERY + BUY BOX) -->
+      <section class="py-8 md:py-12 border-b border-tech-border">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
           
-          <button onclick="switchView('bicicletas')" class="mb-6 sm:mb-8 text-[#8E9192] hover:text-brand-orange text-xs font-mono uppercase tracking-widest flex items-center gap-2 min-h-[44px]">
+          <button onclick="switchView('bicicletas')" class="mb-6 text-[#8E9192] hover:text-brand-orange text-xs font-mono uppercase tracking-widest flex items-center gap-2 min-h-[44px]">
             <span class="material-symbols-outlined text-sm">arrow_back</span> REGRESAR AL CATÁLOGO
           </button>
 
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
             
-            <!-- LEFT: GALLERY -->
-            <div class="lg:col-span-7 flex flex-col gap-3 sm:gap-4">
-              <div class="h-[280px] sm:h-[380px] md:h-[480px] lg:h-[500px] bg-surface-low rounded-card border border-tech-border overflow-hidden p-4 sm:p-6 flex items-center justify-center">
-                <img id="pdp-main-image" src="assets/images/pdp/pdp-carbon-pro-lateral.webp" alt="ASTÄVIK Carbon Pro - Vista Lateral de Competición" width="1600" height="1000" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-[16/10]">
+            <!-- LEFT: PRODUCT GALLERY (DESKTOP VIEWER v3.4 + MOBILE 15% PEEK) -->
+            <div class="lg:col-span-7 flex flex-col gap-3 sm:gap-4 w-full">
+              
+              <!-- Desktop Main Viewer -->
+              <div class="hidden md:block relative w-full aspect-[3/2] bg-surface-dim rounded-card border border-tech-border overflow-hidden select-none group">
+                <!-- Top HUD -->
+                <div class="absolute top-0 inset-x-0 p-4 sm:p-5 flex items-start justify-between z-10 pointer-events-none">
+                  <div class="flex flex-col gap-1 pointer-events-auto">
+                    <div class="flex items-center gap-2">
+                      <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                      <span class="text-white font-mono font-bold text-xs uppercase tracking-wider">ASTĀVIK LAB VIEWER v3.4</span>
+                    </div>
+                    <span class="text-[#8E9192] font-mono text-[10px] tracking-wider">RESOLUTION: 4K HIGH FIDELITY</span>
+                  </div>
+
+                  <div class="flex items-center gap-2 pointer-events-auto">
+                    <button type="button" onclick="spin360Pdp()" aria-label="Girar vista 360 grados" class="bg-surface-mid/80 hover:bg-surface-high border border-tech-border text-white text-xs font-mono px-3 py-1.5 rounded-tech flex items-center gap-1.5 transition-all hover:border-brand-orange">
+                      <span class="material-symbols-outlined text-sm text-brand-orange">sync</span>
+                      <span>360° SPIN</span>
+                    </button>
+                    <button type="button" onclick="openPdpZoomModal()" aria-label="Ampliar imagen" class="bg-surface-mid/80 hover:bg-surface-high border border-tech-border text-[#C4C7C7] hover:text-white p-2 rounded-tech transition-all hover:border-brand-orange">
+                      <span class="material-symbols-outlined text-sm">fullscreen</span>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Main Image -->
+                <div onclick="openPdpZoomModal()" class="w-full h-full flex items-center justify-center p-6 lg:p-8 cursor-zoom-in">
+                  <img id="pdp-main-image" src="assets/images/bikes/bike-carbon-pro-studio.webp" alt="ASTĀVIK Carbon Pro - Vista Oficial de Competición" width="1200" height="800" loading="eager" fetchpriority="high" class="w-full h-full object-contain transition-transform duration-500 ease-out group-hover:scale-[1.02]">
+                </div>
+
+                <!-- Bottom HUD -->
+                <div class="absolute bottom-0 inset-x-0 p-3 sm:p-4 bg-gradient-to-t from-void-black/95 via-void-black/70 to-transparent flex items-center justify-between text-xs font-mono text-[#C4C7C7] z-10 pointer-events-none">
+                  <div class="flex items-center gap-2 tracking-wide text-[11px] sm:text-xs">
+                    <span>WEIGHT: <strong class="text-white">6.82 KG</strong></span>
+                    <span class="text-[#5F5E5E]">•</span>
+                    <span>DRIVETRAIN: <strong class="text-white">ULTEGRA Di2 12S</strong></span>
+                    <span class="text-[#5F5E5E]">•</span>
+                    <span>TIRE CLEARANCE: <strong class="text-white">34MM</strong></span>
+                  </div>
+
+                  <div class="flex items-center gap-1.5 text-brand-orange font-bold text-[11px] sm:text-xs bg-brand-orange/10 border border-brand-orange/30 px-2.5 py-1 rounded-sm">
+                    <span class="material-symbols-outlined text-sm">verified_user</span>
+                    <span>INSPECCIÓN 120 PUNTOS</span>
+                  </div>
+                </div>
               </div>
-              <div class="grid grid-cols-4 gap-2 sm:gap-4">
-                <div class="bg-surface-low border border-tech-border rounded-tech h-16 sm:h-20 md:h-24 p-1.5 sm:p-2 cursor-pointer hover:border-brand-orange flex items-center justify-center" onclick="changePdpImage(this)">
-                  <img src="assets/images/pdp/pdp-carbon-pro-lateral.webp" alt="Vista lateral ASTÄVIK" width="600" height="600" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-square">
+
+              <!-- Mobile Carousel (15% Peek Inviting Swipe) -->
+              <div class="md:hidden flex flex-col gap-2">
+                <div class="flex items-center justify-between px-1 text-xs font-mono">
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                    <span class="text-white font-bold">ASTĀVIK LAB VIEWER v3.4</span>
+                  </div>
+                  <span class="text-brand-orange text-[10px] font-bold border border-brand-orange/40 bg-brand-orange/10 px-2 py-0.5 rounded">
+                    DESLIZA PARA EXPLORAR →
+                  </span>
                 </div>
-                <div class="bg-surface-low border border-tech-border rounded-tech h-16 sm:h-20 md:h-24 p-1.5 sm:p-2 cursor-pointer hover:border-brand-orange flex items-center justify-center" onclick="changePdpImage(this)">
-                  <img src="assets/images/pdp/pdp-carbon-pro-cockpit.webp" alt="Cockpit integrado de carbono" width="600" height="600" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-square">
+
+                <div class="flex overflow-x-auto snap-x snap-mandatory no-scrollbar gap-3.5 pb-2 -mx-4 px-4 scroll-smooth">
+                  <!-- Slide 1: Carbon Void -->
+                  <div onclick="openPdpZoomModalWithSrc('assets/images/pdp/pdp-carbon-pro-downtube.webp', 'Carbon Void', 'Matte Raw Finish')" class="w-[85vw] flex-shrink-0 snap-start aspect-[3/2] bg-surface-dim rounded-card border border-tech-border relative overflow-hidden flex items-center justify-center p-3 cursor-pointer">
+                    <span class="absolute top-2.5 right-2.5 text-[9px] font-mono px-2 py-0.5 rounded-sm font-bold bg-surface-mid text-[#C4C7C7]">CX-01</span>
+                    <div class="absolute bottom-2 inset-x-2 px-2 py-1 bg-void-black/80 backdrop-blur-sm rounded flex items-center justify-between text-[10px] font-mono">
+                      <span class="text-white font-bold">Carbon Void</span>
+                      <span class="text-[#8E9192] text-[9px]">Matte Raw Finish</span>
+                    </div>
+                    <img src="assets/images/pdp/pdp-carbon-pro-downtube.webp" alt="Carbon Void" width="1200" height="800" class="w-full h-full object-contain">
+                  </div>
+                  <!-- Slide 2: Competition Orange -->
+                  <div onclick="openPdpZoomModalWithSrc('assets/images/bikes/bike-carbon-pro-studio.webp', 'Competition Orange', 'Special Gloss Edition')" class="w-[85vw] flex-shrink-0 snap-start aspect-[3/2] bg-surface-dim rounded-card border border-brand-orange relative overflow-hidden flex items-center justify-center p-3 cursor-pointer">
+                    <span class="absolute top-2.5 right-2.5 text-[9px] font-mono px-2 py-0.5 rounded-sm font-bold bg-brand-orange text-void-black">ACTIVE</span>
+                    <div class="absolute bottom-2 inset-x-2 px-2 py-1 bg-void-black/80 backdrop-blur-sm rounded flex items-center justify-between text-[10px] font-mono">
+                      <span class="text-white font-bold">Competition Orange</span>
+                      <span class="text-[#8E9192] text-[9px]">Special Gloss Edition</span>
+                    </div>
+                    <img src="assets/images/bikes/bike-carbon-pro-studio.webp" alt="Competition Orange" width="1200" height="800" class="w-full h-full object-contain">
+                  </div>
+                  <!-- Slide 3: Drivetrain Di2 -->
+                  <div onclick="openPdpZoomModalWithSrc('assets/images/pdp/pdp-carbon-pro-bb-crank.webp', 'Drivetrain Di2', '12-Speed Electronic')" class="w-[85vw] flex-shrink-0 snap-start aspect-[3/2] bg-surface-dim rounded-card border border-tech-border relative overflow-hidden flex items-center justify-center p-3 cursor-pointer">
+                    <span class="absolute top-2.5 right-2.5 text-[9px] font-mono px-2 py-0.5 rounded-sm font-bold bg-surface-mid text-[#C4C7C7]">R8150</span>
+                    <div class="absolute bottom-2 inset-x-2 px-2 py-1 bg-void-black/80 backdrop-blur-sm rounded flex items-center justify-between text-[10px] font-mono">
+                      <span class="text-white font-bold">Drivetrain Di2</span>
+                      <span class="text-[#8E9192] text-[9px]">12-Speed Electronic</span>
+                    </div>
+                    <img src="assets/images/pdp/pdp-carbon-pro-bb-crank.webp" alt="Drivetrain Di2" width="1200" height="800" class="w-full h-full object-contain">
+                  </div>
+                  <!-- Slide 4: Carbon Weave Joint -->
+                  <div onclick="openPdpZoomModalWithSrc('assets/images/pdp/pdp-carbon-pro-seatstays.webp', 'Carbon Weave Joint', 'Monocoque Junction')" class="w-[85vw] flex-shrink-0 snap-start aspect-[3/2] bg-surface-dim rounded-card border border-tech-border relative overflow-hidden flex items-center justify-center p-3 cursor-pointer">
+                    <span class="absolute top-2.5 right-2.5 text-[9px] font-mono px-2 py-0.5 rounded-sm font-bold bg-surface-mid text-[#C4C7C7]">JJ28T</span>
+                    <div class="absolute bottom-2 inset-x-2 px-2 py-1 bg-void-black/80 backdrop-blur-sm rounded flex items-center justify-between text-[10px] font-mono">
+                      <span class="text-white font-bold">Carbon Weave Joint</span>
+                      <span class="text-[#8E9192] text-[9px]">Monocoque Junction</span>
+                    </div>
+                    <img src="assets/images/pdp/pdp-carbon-pro-seatstays.webp" alt="Carbon Weave Joint" width="1200" height="800" class="w-full h-full object-contain">
+                  </div>
                 </div>
-                <div class="bg-surface-low border border-tech-border rounded-tech h-16 sm:h-20 md:h-24 p-1.5 sm:p-2 cursor-pointer hover:border-brand-orange flex items-center justify-center" onclick="changePdpImage(this)">
-                  <img src="assets/images/pdp/pdp-carbon-pro-bb-crank.webp" alt="Pedalier y biela ultra rígida" width="600" height="600" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-square">
-                </div>
-                <div class="bg-surface-low border border-tech-border rounded-tech h-16 sm:h-20 md:h-24 p-1.5 sm:p-2 cursor-pointer hover:border-brand-orange flex items-center justify-center" onclick="changePdpImage(this)">
-                  <img src="assets/images/pdp/pdp-carbon-pro-seatstays.webp" alt="Tirantes traseros aerodinámicos" width="600" height="600" loading="lazy" decoding="async" class="w-full h-full object-contain aspect-square">
+
+                <div class="flex items-center justify-between bg-surface-dim border border-tech-border p-2.5 rounded-tech text-[10px] font-mono text-[#C4C7C7]">
+                  <span>PESO: <strong class="text-white">6.82 KG</strong></span>
+                  <span>GRUPO: <strong class="text-white">ULTEGRA Di2</strong></span>
+                  <span class="text-brand-orange font-bold">120 PUNTOS CERT.</span>
                 </div>
               </div>
+
+              <!-- Desktop Thumbnails Bar -->
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3.5" id="pdp-thumbnails-grid">
+                <!-- Thumb 1 -->
+                <button type="button" onclick="selectPdpThumb(0, 'assets/images/pdp/pdp-carbon-pro-downtube.webp')" class="pdp-thumb relative bg-surface-dim border border-tech-border rounded-tech p-2.5 text-left transition-all hover:border-[#404040] hover:bg-surface-low flex flex-col justify-between min-h-[92px]">
+                  <div class="relative w-full aspect-[16/9] rounded-[2px] overflow-hidden bg-void-black mb-2 flex items-center justify-center p-1">
+                    <img src="assets/images/pdp/pdp-carbon-pro-downtube.webp" alt="Carbon Void" width="300" height="200" class="w-full h-full object-contain">
+                    <span class="absolute top-1 right-1 text-[9px] font-mono px-1.5 py-0.5 rounded-[2px] font-bold bg-surface-mid text-[#C4C7C7]">CX-01</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-mono font-bold text-xs uppercase tracking-tight">Carbon Void</h4>
+                    <p class="text-[#8E9192] text-[10px] font-mono truncate">Matte Raw Finish</p>
+                  </div>
+                </button>
+                <!-- Thumb 2 (Active in mockup) -->
+                <button type="button" onclick="selectPdpThumb(1, 'assets/images/bikes/bike-carbon-pro-studio.webp')" class="pdp-thumb relative bg-surface-low border-2 border-brand-orange ring-1 ring-brand-orange rounded-tech p-2.5 text-left transition-all flex flex-col justify-between min-h-[92px]">
+                  <div class="relative w-full aspect-[16/9] rounded-[2px] overflow-hidden bg-void-black mb-2 flex items-center justify-center p-1">
+                    <img src="assets/images/bikes/bike-carbon-pro-studio.webp" alt="Competition Orange" width="300" height="200" class="w-full h-full object-contain">
+                    <span class="absolute top-1 right-1 text-[9px] font-mono px-1.5 py-0.5 rounded-[2px] font-bold bg-brand-orange text-void-black">ACTIVE</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-mono font-bold text-xs uppercase tracking-tight text-brand-orange">Competition Orange</h4>
+                    <p class="text-[#8E9192] text-[10px] font-mono truncate">Special Gloss Edition</p>
+                  </div>
+                </button>
+                <!-- Thumb 3 -->
+                <button type="button" onclick="selectPdpThumb(2, 'assets/images/pdp/pdp-carbon-pro-bb-crank.webp')" class="pdp-thumb relative bg-surface-dim border border-tech-border rounded-tech p-2.5 text-left transition-all hover:border-[#404040] hover:bg-surface-low flex flex-col justify-between min-h-[92px]">
+                  <div class="relative w-full aspect-[16/9] rounded-[2px] overflow-hidden bg-void-black mb-2 flex items-center justify-center p-1">
+                    <img src="assets/images/pdp/pdp-carbon-pro-bb-crank.webp" alt="Drivetrain Di2" width="300" height="200" class="w-full h-full object-contain">
+                    <span class="absolute top-1 right-1 text-[9px] font-mono px-1.5 py-0.5 rounded-[2px] font-bold bg-surface-mid text-[#C4C7C7]">R8150</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-mono font-bold text-xs uppercase tracking-tight">Drivetrain Di2</h4>
+                    <p class="text-[#8E9192] text-[10px] font-mono truncate">12-Speed Electronic</p>
+                  </div>
+                </button>
+                <!-- Thumb 4 -->
+                <button type="button" onclick="selectPdpThumb(3, 'assets/images/pdp/pdp-carbon-pro-seatstays.webp')" class="pdp-thumb relative bg-surface-dim border border-tech-border rounded-tech p-2.5 text-left transition-all hover:border-[#404040] hover:bg-surface-low flex flex-col justify-between min-h-[92px]">
+                  <div class="relative w-full aspect-[16/9] rounded-[2px] overflow-hidden bg-void-black mb-2 flex items-center justify-center p-1">
+                    <img src="assets/images/pdp/pdp-carbon-pro-seatstays.webp" alt="Carbon Weave Joint" width="300" height="200" class="w-full h-full object-contain">
+                    <span class="absolute top-1 right-1 text-[9px] font-mono px-1.5 py-0.5 rounded-[2px] font-bold bg-surface-mid text-[#C4C7C7]">JJ28T</span>
+                  </div>
+                  <div>
+                    <h4 class="text-white font-mono font-bold text-xs uppercase tracking-tight">Carbon Weave Joint</h4>
+                    <p class="text-[#8E9192] text-[10px] font-mono truncate">Monocoque Junction</p>
+                  </div>
+                </button>
+              </div>
+
             </div>
 
-            <!-- RIGHT: PRODUCT DETAILS & ANTHROPOMETRIC SELECTOR -->
-            <div class="lg:col-span-5 flex flex-col justify-between">
+            <!-- RIGHT: BUY BOX & BIOMECHANICAL SELECTOR -->
+            <div class="lg:col-span-5 flex flex-col gap-5 sm:gap-6 w-full">
+              
+              <!-- 1. Edition & Series Number -->
+              <div class="flex items-center justify-between text-xs font-mono border-b border-tech-border/80 pb-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+                  <span class="text-white font-bold tracking-wider uppercase">EDICIÓN COMPETICIÓN 2025</span>
+                </div>
+                <div class="text-[#8E9192] tracking-wider">
+                  <span>SERIE: </span>
+                  <strong class="text-white">014/100</strong>
+                </div>
+              </div>
+
+              <!-- 2. Titles -->
               <div>
-                <span id="pdp-category" class="text-brand-orange text-xs font-mono tracking-widest uppercase">ROAD / AERO // SPECS: CRBN-9</span>
-                <h1 id="pdp-title" class="text-white font-display font-black text-2xl sm:text-3xl md:text-5xl uppercase tracking-tighter my-2">ASTÄVIK CARBON PRO</h1>
-                <p id="pdp-price" class="text-brand-orange font-display font-bold text-2xl sm:text-3xl mb-4 sm:mb-6">$18.500.000 COP</p>
-                <p id="pdp-desc" class="text-[#8E9192] text-xs sm:text-sm leading-relaxed mb-6 sm:mb-8 border-b border-tech-border pb-6">
-                  Cuadro monocasco de carbono de alto módulo M40J ensamblado con grupo electrónico inalambrico. Cableado 100% interno y perfil aerodinámico testeado en túnel de viento.
+                <h1 id="pdp-title" class="text-white font-display font-black text-3xl sm:text-4xl lg:text-5xl tracking-tighter uppercase leading-none">
+                  Astāvik Carbon Pro
+                </h1>
+                <p id="pdp-desc" class="text-[#8E9192] font-mono text-xs sm:text-[13px] tracking-wider mt-2 uppercase">
+                  AERODYNAMIC HIGH-MODULUS MONOCOQUE ROAD CHASSIS
                 </p>
+              </div>
 
-                <!-- INTERACTIVE ANTHROPOMETRIC SELECTOR -->
-                <div class="bg-surface-low border border-tech-border rounded-card p-4 sm:p-6 mb-6 sm:mb-8">
-                  <div class="flex items-center justify-between mb-4">
-                    <span class="text-white font-display font-bold text-xs sm:text-sm uppercase">CALCULADOR DE TALLA ANTHRO-FIT</span>
-                    <span class="text-brand-orange text-xs font-mono">BIOMECH V1</span>
-                  </div>
+              <!-- 3. Pricing Box -->
+              <div class="bg-surface-low border border-tech-border rounded-card p-4 sm:p-5 flex flex-col gap-2">
+                <span class="text-[#8E9192] font-mono text-[11px] tracking-wider uppercase">
+                  PRECIO ASTĀVIK LAB
+                </span>
+                <div class="flex items-baseline gap-2">
+                  <span id="pdp-price" class="text-brand-orange font-display font-black text-3xl sm:text-4xl md:text-5xl tracking-tight">
+                    $18.500.000
+                  </span>
+                  <span class="text-brand-orange font-display font-bold text-lg sm:text-xl">
+                    COP
+                  </span>
+                </div>
+                
+                <div class="flex items-center justify-between text-xs font-mono pt-2 border-t border-tech-border/60 text-[#C4C7C7]">
+                  <span>IVA e inspección técnica incluidos</span>
+                  <span class="text-emerald-400 font-bold">Envío gratuito</span>
+                </div>
+              </div>
 
-                  <!-- Estatura Slider -->
-                  <div class="mb-4">
-                    <div class="flex justify-between text-xs font-mono mb-1">
-                      <span class="text-[#8E9192]">ESTATURA DEL CICLISTA:</span>
-                      <span id="height-val" class="text-white font-bold">175 cm</span>
-                    </div>
-                    <input type="range" id="height-slider" min="150" max="200" value="175" aria-label="Estatura del ciclista en centímetros" aria-valuemin="150" aria-valuemax="200" aria-valuenow="175" oninput="calculateSize()" class="w-full accent-brand-orange h-3 py-1 cursor-pointer">
-                  </div>
-
-                  <!-- Entrepierna Slider -->
-                  <div class="mb-6">
-                    <div class="flex justify-between text-xs font-mono mb-1">
-                      <span class="text-[#8E9192]">LONGITUD ENTREPIERNA (INSEAM):</span>
-                      <span id="inseam-val" class="text-white font-bold">80 cm</span>
-                    </div>
-                    <input type="range" id="inseam-slider" min="65" max="100" value="80" aria-label="Longitud de entrepierna en centímetros" aria-valuemin="65" aria-valuemax="100" aria-valuenow="80" oninput="calculateSize()" class="w-full accent-brand-orange h-3 py-1 cursor-pointer">
-                    <span class="text-[10px] text-[#8E9192] font-mono block mt-1.5">Guía biomecánica: Mide descalzo contra la pared desde el piso hasta la ingle con un libro plano.</span>
-                  </div>
-
-                  <!-- Size Manual Selection Pills (Hick's Law & H3) -->
-                  <div class="mb-5">
-                    <div class="flex justify-between items-center mb-2">
-                      <span class="text-xs font-mono text-[#8E9192] uppercase">TALLA DE CUADRO SELECCIONADA:</span>
-                      <span id="pdp-size-indicator" class="text-xs font-mono text-brand-orange font-bold">SUGERIDA: M</span>
-                    </div>
-                    <div class="grid grid-cols-5 gap-1.5 sm:gap-2" id="pdp-size-pills">
-                      <button type="button" data-size="XS" onclick="selectManualSize('XS')" class="size-pill border border-tech-border min-h-[44px] flex items-center justify-center py-2 text-xs font-mono font-bold text-center rounded-tech text-[#8E9192] hover:border-brand-orange transition-all">XS</button>
-                      <button type="button" data-size="S" onclick="selectManualSize('S')" class="size-pill border border-tech-border min-h-[44px] flex items-center justify-center py-2 text-xs font-mono font-bold text-center rounded-tech text-[#8E9192] hover:border-brand-orange transition-all">S</button>
-                      <button type="button" data-size="M" onclick="selectManualSize('M')" class="size-pill border-2 border-brand-orange bg-brand-orange/10 text-brand-orange min-h-[44px] flex items-center justify-center py-2 text-xs font-mono font-bold text-center rounded-tech transition-all">M</button>
-                      <button type="button" data-size="L" onclick="selectManualSize('L')" class="size-pill border border-tech-border min-h-[44px] flex items-center justify-center py-2 text-xs font-mono font-bold text-center rounded-tech text-[#8E9192] hover:border-brand-orange transition-all">L</button>
-                      <button type="button" data-size="XL" onclick="selectManualSize('XL')" class="size-pill border border-tech-border min-h-[44px] flex items-center justify-center py-2 text-xs font-mono font-bold text-center rounded-tech text-[#8E9192] hover:border-brand-orange transition-all">XL</button>
-                    </div>
-                  </div>
-
-                  <!-- Recommendation Output Box -->
-                  <div class="bg-surface-dim border border-tech-border rounded-tech p-4 flex flex-col gap-2">
-                    <div class="flex justify-between items-center">
-                      <span class="text-xs text-[#8E9192] font-mono">RECOMENDACIÓN BIOMECÁNICA:</span>
-                      <span id="recommended-size" class="text-brand-orange font-display font-black text-2xl">MEDIUM (M)</span>
-                    </div>
-                    <p id="posture-advice" class="text-xs text-[#8E9192] leading-snug">
-                      <strong class="text-white">Postura Aero / Agresiva:</strong> Geometría equilibrada con Stack 545mm y Reach 385mm para optima aerodinámica en sprint.
-                    </p>
-                  </div>
+              <!-- 4. Size Selection & Biomechanical Calculator -->
+              <div class="flex flex-col gap-3">
+                <div class="flex items-center justify-between">
+                  <label class="text-xs font-mono text-white font-bold tracking-wider">
+                    TALLA DEL CUADRO *
+                  </label>
+                  
+                  <button type="button" onclick="openBiomechModal()" class="text-brand-orange hover:text-brand-orange-hover text-xs font-mono flex items-center gap-1.5 transition-colors focus:outline-none">
+                    <span class="material-symbols-outlined text-sm">straighten</span>
+                    <span class="underline underline-offset-2">Calculadora Biomecánica</span>
+                  </button>
                 </div>
 
-                <!-- Action Button -->
-                <button onclick="addPdpToCart()" class="w-full bg-brand-orange hover:bg-brand-orange-hover text-void-black font-display font-bold uppercase tracking-widest py-4 rounded-tech transition-transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
-                  <span class="material-symbols-outlined text-xl">shopping_bag</span>
-                  <span>AGREGAR AL ARSENAL</span>
+                <!-- Size Buttons -->
+                <div class="grid grid-cols-5 gap-2" id="pdp-size-pills">
+                  <button type="button" data-size="XS" onclick="selectManualSize('XS')" class="size-pill relative py-3.5 sm:py-4 px-2 rounded-tech font-mono text-xs font-bold border border-tech-border bg-surface-dim text-[#8E9192] opacity-40 flex flex-col items-center justify-center min-h-[48px]">
+                    <span>XS</span>
+                  </button>
+                  <button type="button" data-size="S" onclick="selectManualSize('S')" class="size-pill relative py-3.5 sm:py-4 px-2 rounded-tech font-mono text-xs font-bold border border-tech-border bg-surface-dim text-white hover:border-[#404040] flex flex-col items-center justify-center min-h-[48px]">
+                    <span>S</span>
+                  </button>
+                  <button type="button" data-size="M" onclick="selectManualSize('M')" class="size-pill relative py-3.5 sm:py-4 px-2 rounded-tech font-mono text-xs font-bold border-2 border-brand-orange bg-brand-orange/15 text-brand-orange shadow-[0_0_15px_rgba(255,77,0,0.25)] flex flex-col items-center justify-center min-h-[48px]">
+                    <span>M</span>
+                    <span class="text-[8px] font-mono text-brand-orange uppercase mt-0.5 tracking-tighter">EN STOCK</span>
+                  </button>
+                  <button type="button" data-size="L" onclick="selectManualSize('L')" class="size-pill relative py-3.5 sm:py-4 px-2 rounded-tech font-mono text-xs font-bold border border-tech-border bg-surface-dim text-white hover:border-[#404040] flex flex-col items-center justify-center min-h-[48px]">
+                    <span>L</span>
+                  </button>
+                  <button type="button" data-size="XL" onclick="selectManualSize('XL')" class="size-pill relative py-3.5 sm:py-4 px-2 rounded-tech font-mono text-xs font-bold border border-tech-border bg-surface-dim text-[#8E9192] opacity-40 flex flex-col items-center justify-center min-h-[48px]">
+                    <span>XL</span>
+                  </button>
+                </div>
+
+                <!-- Recommendation Callout -->
+                <div class="bg-surface-dim border border-tech-border rounded-tech p-3 flex items-start gap-2.5 text-xs font-mono text-[#C4C7C7]">
+                  <span class="material-symbols-outlined text-sm text-brand-orange mt-0.5">verified_user</span>
+                  <div class="leading-snug">
+                    <span>Recomendación para </span>
+                    <strong class="text-white">172 - 180 cm</strong>
+                    <span> con entrepierna de </span>
+                    <strong class="text-white">80-84 cm.</strong>
+                  </div>
+                </div>
+              </div>
+
+              <!-- 5. Primary CTAs -->
+              <div class="flex flex-col gap-3 pt-2">
+                <button type="button" onclick="openWompiCheckout()" class="w-full bg-brand-orange hover:bg-brand-orange-hover text-void-black font-display font-black text-sm uppercase tracking-wider py-4 rounded-tech transition-transform hover:-translate-y-0.5 flex items-center justify-center gap-2 shadow-[0_4px_20px_rgba(255,77,0,0.3)] min-h-[52px]">
+                  <span class="material-symbols-outlined text-base">bolt</span>
+                  <span>COMPRAR AHORA</span>
                 </button>
+
+                <button type="button" onclick="addPdpToCart()" class="w-full bg-surface-low hover:bg-surface-mid border border-tech-border text-white font-mono font-bold text-xs uppercase tracking-wider py-4 rounded-tech transition-all flex items-center justify-center gap-2 min-h-[48px]">
+                  <span class="material-symbols-outlined text-base">shopping_cart</span>
+                  <span>AGREGAR AL CARRITO</span>
+                </button>
+              </div>
+
+              <!-- 6. Stock & Dispatch Status -->
+              <div class="flex items-center justify-between text-xs font-mono text-[#C4C7C7] border-y border-tech-border/60 py-3">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="text-white font-semibold">UNIDAD DISPONIBLE EN BOGOTÁ</span>
+                </div>
+                <div class="text-[#8E9192]">
+                  DISPATCH: <strong class="text-white">24H</strong>
+                </div>
+              </div>
+
+              <!-- 7. Trust Badges -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="bg-surface-dim border border-tech-border rounded-tech p-3 flex items-center gap-3">
+                  <span class="material-symbols-outlined text-base text-brand-orange flex-shrink-0">shield</span>
+                  <span class="text-[11px] font-mono text-[#C4C7C7] leading-tight">3 años de garantía en cuadro de carbono</span>
+                </div>
+
+                <div class="bg-surface-dim border border-tech-border rounded-tech p-3 flex items-center gap-3">
+                  <span class="material-symbols-outlined text-base text-brand-orange flex-shrink-0">build</span>
+                  <span class="text-[11px] font-mono text-[#C4C7C7] leading-tight">Puesta a punto personalizada previa</span>
+                </div>
               </div>
 
             </div>
@@ -1122,6 +1339,258 @@
 
         </div>
       </section>
+
+      <!-- SECTION: INGENIERÍA DE PRECISIÓN // ARQUITECTURA DE CUADRO & GEOMETRÍA -->
+      <section class="w-full border-b border-tech-border py-12 sm:py-16">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-2 mb-8 sm:mb-10">
+            <div>
+              <div class="flex items-center gap-2 text-brand-orange text-xs font-mono tracking-widest uppercase mb-1">
+                <span class="w-2 h-2 bg-brand-orange inline-block"></span>
+                <span>INGENIERÍA DE PRECISIÓN</span>
+              </div>
+              <h2 class="text-white font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter">
+                ARQUITECTURA DE CUADRO & GEOMETRÍA
+              </h2>
+            </div>
+
+            <div class="text-xs font-mono text-[#8E9192] tracking-wider bg-surface-dim border border-tech-border px-3 py-1.5 rounded-tech">
+              CAD SPECIFICATION: <span class="text-white font-semibold">ASTAVIK-AETHER REV 4.2 // COMPACT AERO</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+            
+            <!-- Left: CAD Blueprint 2D Schematic -->
+            <div class="lg:col-span-6 bg-surface-dim border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between relative overflow-hidden group">
+              <div class="absolute inset-0 bg-[linear-gradient(to_right,#1C1B1B_1px,transparent_1px),linear-gradient(to_bottom,#1C1B1B_1px,transparent_1px)] bg-[size:24px_24px] opacity-40 pointer-events-none"></div>
+
+              <div class="flex items-center justify-between text-xs font-mono z-10 mb-4">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 bg-brand-orange"></span>
+                  <span class="text-white font-bold tracking-wider">BLUEPRINT DIMENSIONAL 2D</span>
+                </div>
+                <span class="text-[#8E9192] text-[10px] uppercase">VECTORIAL CAD</span>
+              </div>
+
+              <!-- Blueprint Vector Drawing -->
+              <div class="relative w-full aspect-[16/10] my-4 flex items-center justify-center z-10">
+                <svg viewBox="0 0 800 500" class="w-full h-full text-white/80" fill="none" stroke="currentColor">
+                  <path d="M50 450 H750" stroke="#333" stroke-dasharray="4 4" stroke-width="1" />
+                  <path d="M180 50 V450" stroke="#333" stroke-dasharray="4 4" stroke-width="1" />
+                  <path d="M620 50 V450" stroke="#333" stroke-dasharray="4 4" stroke-width="1" />
+                  <text x="50" y="35" fill="#8E9192" font-size="12" font-family="monospace" letter-spacing="2">ASTAVIK AETHER - GRAVEL/ROAD BICYCLE BLUEPRINT</text>
+                  
+                  <!-- Wheels -->
+                  <circle cx="180" cy="330" r="130" stroke="#404040" stroke-width="3" />
+                  <circle cx="180" cy="330" r="15" stroke="#FF4D00" stroke-width="2" />
+                  <circle cx="620" cy="330" r="130" stroke="#404040" stroke-width="3" />
+                  <circle cx="620" cy="330" r="15" stroke="#FF4D00" stroke-width="2" />
+                  
+                  <!-- Frame -->
+                  <circle cx="340" cy="350" r="12" stroke="#FF4D00" stroke-width="2.5" />
+                  <line x1="180" y1="330" x2="340" y2="350" stroke="#E5E2E1" stroke-width="3.5" />
+                  <line x1="340" y1="350" x2="310" y2="180" stroke="#E5E2E1" stroke-width="4" />
+                  <line x1="310" y1="180" x2="280" y2="120" stroke="#FF4D00" stroke-width="3" />
+                  <path d="M245 118 Q290 115 320 120" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+                  <line x1="180" y1="330" x2="310" y2="180" stroke="#E5E2E1" stroke-width="3" />
+                  <line x1="310" y1="180" x2="520" y2="160" stroke="#E5E2E1" stroke-width="4" />
+                  <line x1="520" y1="160" x2="540" y2="230" stroke="#FF4D00" stroke-width="5" />
+                  <line x1="340" y1="350" x2="540" y2="230" stroke="#E5E2E1" stroke-width="4.5" />
+                  <line x1="540" y1="230" x2="620" y2="330" stroke="#E5E2E1" stroke-width="3.5" />
+                  <line x1="520" y1="160" x2="535" y2="135" stroke="#FFFFFF" stroke-width="3" />
+                  <path d="M535 135 H565 Q585 145 570 175" stroke="#FFFFFF" stroke-width="3.5" fill="none" stroke-linecap="round" />
+                  
+                  <!-- Stack & Reach Dimension Lines -->
+                  <line x1="340" y1="350" x2="340" y2="160" stroke="#FF4D00" stroke-width="1.5" stroke-dasharray="3 3" />
+                  <line x1="340" y1="160" x2="520" y2="160" stroke="#FF4D00" stroke-width="1.5" stroke-dasharray="3 3" />
+                  <text x="350" y="260" fill="#FF4D00" font-size="11" font-family="monospace" font-weight="bold">STACK: 552mm</text>
+                  <text x="400" y="150" fill="#FF4D00" font-size="11" font-family="monospace" font-weight="bold">REACH: 388mm</text>
+                  <line x1="180" y1="410" x2="620" y2="410" stroke="#8E9192" stroke-width="1" />
+                  <text x="340" y="425" fill="#8E9192" font-size="10" font-family="monospace">WHEELBASE: 1005mm</text>
+                  <text x="410" y="300" fill="#FF4D00" font-size="12" font-family="sans-serif" font-weight="900" transform="rotate(-30 410 300)" letter-spacing="2">ASTĀVIK</text>
+                </svg>
+              </div>
+
+              <div class="flex items-center justify-between text-[11px] font-mono text-[#8E9192] border-t border-tech-border/70 pt-3 z-10">
+                <span>REFERENCIA GEOMÉTRICA DIN EN 14781</span>
+                <span class="text-brand-orange font-bold">SCALE: 1:10 CNC MASTER</span>
+              </div>
+            </div>
+
+            <!-- Right: Geometry Measurement Matrix (MM) Table -->
+            <div class="lg:col-span-6 bg-surface-dim border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-xs font-mono border-b border-tech-border pb-3 mb-4">
+                  <span class="text-white font-bold tracking-wider">MATRIZ DE MEDIDAS (MM)</span>
+                  <div class="flex items-center gap-1.5">
+                    <span class="text-[#8E9192]">TALLA SELECCIONADA:</span>
+                    <span id="pdp-matrix-selected-size" class="text-brand-orange font-bold px-2 py-0.5 rounded bg-brand-orange/15 border border-brand-orange/40">M</span>
+                  </div>
+                </div>
+
+                <div class="overflow-x-auto no-scrollbar">
+                  <table class="w-full text-xs font-mono border-collapse">
+                    <thead>
+                      <tr class="border-b border-tech-border text-[#8E9192] text-[11px]">
+                        <th class="py-2.5 text-left font-medium">COTAS TÉCNICAS</th>
+                        <th class="py-2.5 px-3 text-center">XS</th>
+                        <th class="py-2.5 px-3 text-center">S</th>
+                        <th class="py-2.5 px-3 text-center text-brand-orange font-bold bg-brand-orange/10">M</th>
+                        <th class="py-2.5 px-3 text-center">L</th>
+                        <th class="py-2.5 px-3 text-center">XL</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-tech-border/40">
+                      <tr>
+                        <td class="py-3 text-white font-medium">Stack (A)</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">518</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">534</td>
+                        <td class="py-3 px-3 text-center text-brand-orange font-bold bg-brand-orange/15 border-x border-brand-orange/30">552</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">574</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">598</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 text-white font-medium">Reach (B)</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">374</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">382</td>
+                        <td class="py-3 px-3 text-center text-brand-orange font-bold bg-brand-orange/15 border-x border-brand-orange/30">388</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">396</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">405</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 text-white font-medium">Longitud Vainas</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">408</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">408</td>
+                        <td class="py-3 px-3 text-center text-brand-orange font-bold bg-brand-orange/15 border-x border-brand-orange/30">410</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">410</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">412</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 text-white font-medium">Ángulo Dirección</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">71.5°</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">72.3°</td>
+                        <td class="py-3 px-3 text-center text-brand-orange font-bold bg-brand-orange/15 border-x border-brand-orange/30">73.0°</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">73.5°</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">73.5°</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 text-white font-medium">Standover Height</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">745</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">768</td>
+                        <td class="py-3 px-3 text-center text-brand-orange font-bold bg-brand-orange/15 border-x border-brand-orange/30">792</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">815</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">840</td>
+                      </tr>
+                      <tr>
+                        <td class="py-3 text-white font-medium">Wheelbase Total</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">975</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">988</td>
+                        <td class="py-3 px-3 text-center text-brand-orange font-bold bg-brand-orange/15 border-x border-brand-orange/30">1005</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">1018</td>
+                        <td class="py-3 px-3 text-center text-[#C4C7C7]">1032</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              <div class="border-t border-tech-border/80 pt-4 mt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs font-mono">
+                <div class="text-[#C4C7C7]">
+                  <span>Relación Stack/Reach (Talla M): </span>
+                  <strong class="text-brand-orange font-bold">1.42</strong>
+                  <span class="text-[#8E9192]"> (Competición Agresiva)</span>
+                </div>
+
+                <a href="#dxf-download" onclick="alert('Descargando especificación vectorial CAD: ASTAVIK-AETHER-REV4.2.dxf'); return false;" class="text-brand-orange hover:text-brand-orange-hover font-bold flex items-center gap-1.5 transition-colors underline underline-offset-2">
+                  <span class="material-symbols-outlined text-sm">download</span>
+                  <span>Descargar DXF / PDF</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- SECTION: ESPECIFICACIONES DE FÁBRICA // MATRIZ DE COMPONENTES -->
+      <section class="w-full py-12 sm:py-16 bg-surface-dim/40">
+        <div class="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12">
+          
+          <div class="flex flex-col md:flex-row md:items-end justify-between gap-3 mb-8 sm:mb-10">
+            <div>
+              <div class="flex items-center gap-2 text-brand-orange text-xs font-mono tracking-widest uppercase mb-1">
+                <span class="w-2 h-2 bg-brand-orange inline-block"></span>
+                <span>ESPECIFICACIONES DE FÁBRICA</span>
+              </div>
+              <h2 class="text-white font-display font-black text-2xl sm:text-3xl md:text-4xl uppercase tracking-tighter">
+                MATRIZ DE COMPONENTES
+              </h2>
+            </div>
+
+            <div class="text-xs font-mono bg-surface-dim border border-tech-border px-3.5 py-2 rounded-tech flex items-center gap-2 self-start md:self-auto">
+              <span class="text-[#8E9192]">PESO VERIFICADO:</span>
+              <span class="text-brand-orange font-bold text-sm tracking-tight">6.82 KG</span>
+              <span class="text-[#5F5E5E] text-[11px]">(SIN PEDALES)</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+            <!-- Card 1 -->
+            <div class="bg-surface-low border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between hover:border-[#404040] transition-colors group">
+              <div>
+                <span class="text-brand-orange font-mono font-bold text-[11px] sm:text-xs tracking-widest uppercase block mb-2">TRANSMISIÓN & GRUPO</span>
+                <h3 class="text-white font-display font-bold text-base sm:text-lg mb-2 group-hover:text-brand-orange transition-colors">Shimano Dura-Ace Di2 R9270 12 Velocidades</h3>
+                <p class="text-[#C4C7C7] text-xs sm:text-[13px] font-sans leading-relaxed">Bielas 52-36T Hollowtech II con potenciómetro integrado de doble cara, cassette 11-30T ultra-cerrado.</p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="bg-surface-low border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between hover:border-[#404040] transition-colors group">
+              <div>
+                <span class="text-brand-orange font-mono font-bold text-[11px] sm:text-xs tracking-widest uppercase block mb-2">RUEDAS AERO</span>
+                <h3 class="text-white font-display font-bold text-base sm:text-lg mb-2 group-hover:text-brand-orange transition-colors">Astāvik HyperAero 50 Carbon Disc</h3>
+                <p class="text-[#C4C7C7] text-xs sm:text-[13px] font-sans leading-relaxed">Perfil de 50mm, ancho interno 21mm hookless, bujes DT Swiss 180 con rodamientos cerámicos SINC.</p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="bg-surface-low border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between hover:border-[#404040] transition-colors group">
+              <div>
+                <span class="text-brand-orange font-mono font-bold text-[11px] sm:text-xs tracking-widest uppercase block mb-2">SISTEMA DE FRENADO</span>
+                <h3 class="text-white font-display font-bold text-base sm:text-lg mb-2 group-hover:text-brand-orange transition-colors">Frenos de Disco Hidráulicos Dura-Ace Flat-Mount</h3>
+                <p class="text-[#C4C7C7] text-xs sm:text-[13px] font-sans leading-relaxed">Rotores RT-CL900 Freeza Ice-Technologies (160mm delantero / 140mm trasero) anti-fading térmico.</p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="bg-surface-low border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between hover:border-[#404040] transition-colors group">
+              <div>
+                <span class="text-brand-orange font-mono font-bold text-[11px] sm:text-xs tracking-widest uppercase block mb-2">COCKPIT INTEGRADO</span>
+                <h3 class="text-white font-display font-bold text-base sm:text-lg mb-2 group-hover:text-brand-orange transition-colors">AeroFlow Carbon Cockpit Monocasco</h3>
+                <p class="text-[#C4C7C7] text-xs sm:text-[13px] font-sans leading-relaxed">Cableado 100% interno oculto, flare ergonómico de 3°, soporte de ciclocomputador CNC de titanio.</p>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div class="bg-surface-low border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between hover:border-[#404040] transition-colors group">
+              <div>
+                <span class="text-brand-orange font-mono font-bold text-[11px] sm:text-xs tracking-widest uppercase block mb-2">SILLÍN & TIJA</span>
+                <h3 class="text-white font-display font-bold text-base sm:text-lg mb-2 group-hover:text-brand-orange transition-colors">Selle Italia SLR Boost Superflow Carbon Rails</h3>
+                <p class="text-[#C4C7C7] text-xs sm:text-[13px] font-sans leading-relaxed">Tija Astāvik D-Shape Aero de retroceso ajustable (0mm / 15mm) con elastómero de amortiguación.</p>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div class="bg-surface-low border border-tech-border rounded-card p-5 sm:p-6 flex flex-col justify-between hover:border-[#404040] transition-colors group">
+              <div>
+                <span class="text-brand-orange font-mono font-bold text-[11px] sm:text-xs tracking-widest uppercase block mb-2">NEUMÁTICOS DE COMPETICIÓN</span>
+                <h3 class="text-white font-display font-bold text-base sm:text-lg mb-2 group-hover:text-brand-orange transition-colors">Vittoria Corsa PRO TLR 700 × 28c Tubeless</h3>
+                <p class="text-[#C4C7C7] text-xs sm:text-[13px] font-sans leading-relaxed">Carcasa de algodón de 320 TPI con compuesto Graphene + Silica y sellante líquido de competición.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
     </div>
 
 
@@ -1889,6 +2358,126 @@
         </div>
       </div>
 
+  <!-- FULLSCREEN PINCH-TO-ZOOM PDP MODAL -->
+  <div id="pdp-zoom-modal" class="fixed inset-0 z-50 hidden bg-[#0A0A0A]/95 backdrop-blur-xl flex flex-col justify-between select-none" role="dialog" aria-modal="true" aria-label="Visor microscópico 4K">
+    <!-- Top HUD -->
+    <div class="flex items-center justify-between p-4 sm:p-6 border-b border-tech-border bg-surface-dim/80 z-20">
+      <div>
+        <div class="flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-brand-orange animate-pulse"></span>
+          <h3 id="pdp-zoom-title" class="text-white font-display font-black text-sm sm:text-base uppercase tracking-tight">Competition Orange</h3>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-surface-mid text-brand-orange border border-tech-border">4K MICROSCOPY</span>
+        </div>
+        <p id="pdp-zoom-subtitle" class="text-xs font-mono text-[#8E9192] mt-0.5">Special Gloss Edition</p>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="zoomPdpModal(-0.5)" aria-label="Alejar" class="p-2.5 bg-surface-mid hover:bg-surface-high border border-tech-border text-[#C4C7C7] hover:text-white rounded-tech transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+          <span class="material-symbols-outlined text-lg">zoom_out</span>
+        </button>
+        <span id="pdp-zoom-level" class="text-[11px] font-mono text-white px-2 min-w-[48px] text-center">100%</span>
+        <button type="button" onclick="zoomPdpModal(0.5)" aria-label="Acercar" class="p-2.5 bg-surface-mid hover:bg-surface-high border border-tech-border text-[#C4C7C7] hover:text-white rounded-tech transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+          <span class="material-symbols-outlined text-lg">zoom_in</span>
+        </button>
+        <button type="button" onclick="resetPdpZoomModal()" aria-label="Restablecer" class="p-2.5 bg-surface-mid hover:bg-surface-high border border-tech-border text-[#C4C7C7] hover:text-white rounded-tech transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center">
+          <span class="material-symbols-outlined text-lg">restart_alt</span>
+        </button>
+        <button type="button" onclick="closePdpZoomModal()" aria-label="Cerrar visor" class="p-2.5 bg-brand-orange hover:bg-brand-orange-hover text-void-black rounded-tech transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center font-bold">
+          <span class="material-symbols-outlined text-xl">close</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Canvas -->
+    <div id="pdp-zoom-canvas" class="flex-1 w-full h-full overflow-hidden flex items-center justify-center cursor-grab active:cursor-grabbing p-4">
+      <div id="pdp-zoom-wrapper" class="relative max-w-full max-h-full flex items-center justify-center transition-transform duration-150 ease-out">
+        <img id="pdp-zoom-img" src="assets/images/bikes/bike-carbon-pro-studio.webp" alt="Detalle en alta resolución" width="1200" height="800" draggable="false" class="max-w-[90vw] max-h-[75vh] object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.9)]">
+      </div>
+    </div>
+
+    <!-- Bottom HUD -->
+    <div class="p-3 sm:p-4 border-t border-tech-border bg-surface-dim/80 flex flex-col sm:flex-row items-center justify-between text-[11px] font-mono text-[#8E9192] gap-2 z-20">
+      <div class="flex items-center gap-3">
+        <span class="text-brand-orange font-bold">GESTOS TÁCTILES:</span>
+        <span>Pellizcar para ampliar // Arrastrar para inspeccionar // Doble tap para restablecer</span>
+      </div>
+      <div class="text-white font-semibold">
+        TORAYCA T1100G CARBON WEAVE INSPECTION • 3.5X MAX RESOLUTION
+      </div>
+    </div>
+  </div>
+
+
+  <!-- BIOMECHANICAL CALCULATOR MODAL -->
+  <div id="pdp-calc-modal" class="fixed inset-0 z-50 hidden bg-[#0A0A0A]/90 backdrop-blur-md flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Calculadora Biomecánica">
+    <div class="bg-surface-dim border border-tech-border rounded-card max-w-lg w-full p-6 sm:p-8 flex flex-col gap-6 shadow-2xl">
+      <div class="flex items-center justify-between border-b border-tech-border pb-4">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-tech bg-brand-orange/15 border border-brand-orange/40 flex items-center justify-center text-brand-orange">
+            <span class="material-symbols-outlined text-base">straighten</span>
+          </div>
+          <div>
+            <h3 class="text-white font-display font-black text-lg uppercase tracking-tight">Calculadora Biomecánica</h3>
+            <p class="text-[11px] font-mono text-[#8E9192]">SISTEMA ANTHRO-FIT ASTĀVIK V1.4 // ALGORITMO DIN EN 14781</p>
+          </div>
+        </div>
+        <button type="button" onclick="closeBiomechModal()" aria-label="Cerrar modal" class="p-2 text-[#8E9192] hover:text-white rounded-tech hover:bg-surface-low transition-colors min-h-[44px] min-w-[44px] flex items-center justify-center">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
+
+      <div class="flex flex-col gap-5">
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center text-xs font-mono">
+            <span class="text-[#C4C7C7]">ESTATURA TOTAL (CM):</span>
+            <span id="modal-height-val" class="text-white font-bold text-sm bg-surface-low border border-tech-border px-3 py-1 rounded-tech">176 cm</span>
+          </div>
+          <input type="range" id="modal-height-slider" min="150" max="200" value="176" oninput="updateBiomechModalCalc()" class="w-full accent-brand-orange h-2 bg-surface-mid rounded cursor-pointer">
+          <div class="flex justify-between text-[10px] font-mono text-[#5F5E5E]">
+            <span>150 cm</span>
+            <span>175 cm</span>
+            <span>200 cm</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <div class="flex justify-between items-center text-xs font-mono">
+            <span class="text-[#C4C7C7]">LONGITUD DE ENTREPIERNA / INSEAM (CM):</span>
+            <span id="modal-inseam-val" class="text-brand-orange font-bold text-sm bg-surface-low border border-tech-border px-3 py-1 rounded-tech">82 cm</span>
+          </div>
+          <input type="range" id="modal-inseam-slider" min="65" max="100" value="82" oninput="updateBiomechModalCalc()" class="w-full accent-brand-orange h-2 bg-surface-mid rounded cursor-pointer">
+          <div class="flex justify-between text-[10px] font-mono text-[#5F5E5E]">
+            <span>65 cm</span>
+            <span>80 cm</span>
+            <span>100 cm</span>
+          </div>
+        </div>
+
+        <div class="bg-surface-low border border-tech-border rounded-tech p-4 flex flex-col gap-2.5">
+          <div class="flex justify-between items-center">
+            <span class="text-xs font-mono text-[#8E9192]">TALLA SUGERIDA POR INGENIERÍA:</span>
+            <span id="modal-recommended-size" class="text-brand-orange font-display font-black text-2xl tracking-tight">TALLA M</span>
+          </div>
+          <div class="text-xs text-[#C4C7C7] border-t border-tech-border/60 pt-2 flex flex-col gap-1">
+            <p id="modal-posture-desc" class="font-medium text-white">Competición Agresiva (Geometría equilibrada para óptima transferencia de vatios)</p>
+            <div class="flex items-center gap-3 text-[11px] font-mono text-[#8E9192] mt-1">
+              <span>Stack/Reach Ratio: <strong id="modal-stack-reach" class="text-white">1.42</strong></span>
+              <span>•</span>
+              <span>Rango Estatura: <strong id="modal-height-range" class="text-white">172 - 180 cm</strong></span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-end gap-3 pt-2 border-t border-tech-border">
+        <button type="button" onclick="closeBiomechModal()" class="px-4 py-2.5 rounded-tech text-xs font-mono uppercase text-[#C4C7C7] hover:text-white hover:bg-surface-low border border-transparent transition-colors min-h-[44px]">
+          CANCELAR
+        </button>
+        <button type="button" onclick="applyBiomechModalSize()" class="px-6 py-2.5 rounded-tech text-xs font-display font-bold uppercase tracking-wider bg-brand-orange hover:bg-brand-orange-hover text-void-black transition-all flex items-center gap-2 min-h-[44px]">
+          <span class="material-symbols-outlined text-sm">check_circle</span>
+          <span id="modal-apply-btn-text">APLICAR TALLA M</span>
+        </button>
+      </div>
     </div>
   </div>
 
@@ -2423,19 +3012,189 @@
     function selectManualSize(sizeCode) {
       currentSelectedSize = sizeCode;
       updateSizePillsUI();
-      document.getElementById('recommended-size').innerText = `${sizeCode} (MANUAL)`;
-      document.getElementById('pdp-size-indicator').innerText = `SELECCIÓN MANUAL: ${sizeCode}`;
+      const recElem = document.getElementById('recommended-size');
+      if (recElem) recElem.innerText = `${sizeCode} (MANUAL)`;
+      const indElem = document.getElementById('pdp-size-indicator');
+      if (indElem) indElem.innerText = `SELECCIÓN MANUAL: ${sizeCode}`;
+      const matrixElem = document.getElementById('pdp-matrix-selected-size');
+      if (matrixElem) matrixElem.innerText = sizeCode;
     }
 
     function updateSizePillsUI() {
       document.querySelectorAll('#pdp-size-pills button').forEach(btn => {
         if (btn.getAttribute('data-size') === currentSelectedSize) {
-          btn.className = 'size-pill min-h-[44px] border-2 border-brand-orange bg-brand-orange/10 text-brand-orange py-2 text-xs font-mono font-bold text-center rounded-tech transition-all flex items-center justify-center';
+          btn.className = 'size-pill min-h-[48px] py-3.5 sm:py-4 px-2 rounded-tech font-mono text-xs font-bold border-2 border-brand-orange bg-brand-orange/15 text-brand-orange shadow-[0_0_15px_rgba(255,77,0,0.25)] flex flex-col items-center justify-center transition-all';
         } else {
-          btn.className = 'size-pill min-h-[44px] border border-tech-border py-2 text-xs font-mono font-bold text-center rounded-tech text-[#8E9192] hover:border-brand-orange transition-all flex items-center justify-center';
+          btn.className = 'size-pill min-h-[48px] py-3.5 sm:py-4 px-2 rounded-tech font-mono text-xs font-bold border border-tech-border bg-surface-dim text-white hover:border-[#404040] flex flex-col items-center justify-center transition-all';
         }
       });
-      document.getElementById('pdp-size-indicator').innerText = `SELECCIONADA: ${currentSelectedSize}`;
+      const indElem = document.getElementById('pdp-size-indicator');
+      if (indElem) indElem.innerText = `SELECCIONADA: ${currentSelectedSize}`;
+      const matrixElem = document.getElementById('pdp-matrix-selected-size');
+      if (matrixElem) matrixElem.innerText = currentSelectedSize;
+    }
+
+    let currentZoomScale = 1;
+    let pdpThumbnails = [
+      'assets/images/pdp/pdp-carbon-pro-downtube.webp',
+      'assets/images/bikes/bike-carbon-pro-studio.webp',
+      'assets/images/pdp/pdp-carbon-pro-bb-crank.webp',
+      'assets/images/pdp/pdp-carbon-pro-seatstays.webp'
+    ];
+
+    function selectPdpThumb(index, src) {
+      const mainImg = document.getElementById('pdp-main-image');
+      if (mainImg) mainImg.src = src;
+      const thumbs = document.querySelectorAll('#pdp-thumbnails-grid .pdp-thumb');
+      thumbs.forEach((thumb, idx) => {
+        const badge = thumb.querySelector('span');
+        const title = thumb.querySelector('h4');
+        if (idx === index) {
+          thumb.className = 'pdp-thumb relative bg-surface-low border-2 border-brand-orange ring-1 ring-brand-orange rounded-tech p-2.5 text-left transition-all flex flex-col justify-between min-h-[92px]';
+          if (badge) {
+            badge.className = 'absolute top-1 right-1 text-[9px] font-mono px-1.5 py-0.5 rounded-[2px] font-bold bg-brand-orange text-void-black';
+            badge.innerText = 'ACTIVE';
+          }
+          if (title) title.className = 'text-brand-orange font-mono font-bold text-xs uppercase tracking-tight';
+        } else {
+          thumb.className = 'pdp-thumb relative bg-surface-dim border border-tech-border rounded-tech p-2.5 text-left transition-all hover:border-[#404040] hover:bg-surface-low flex flex-col justify-between min-h-[92px]';
+          if (badge) {
+            badge.className = 'absolute top-1 right-1 text-[9px] font-mono px-1.5 py-0.5 rounded-[2px] font-bold bg-surface-mid text-[#C4C7C7]';
+            const defaultCodes = ['CX-01', 'CX-02', 'R8150', 'JJ28T'];
+            badge.innerText = defaultCodes[idx] || 'CX';
+          }
+          if (title) title.className = 'text-white font-mono font-bold text-xs uppercase tracking-tight';
+        }
+      });
+    }
+
+    function spin360Pdp() {
+      let idx = 0;
+      let count = 0;
+      const interval = setInterval(() => {
+        idx = (idx + 1) % pdpThumbnails.length;
+        selectPdpThumb(idx, pdpThumbnails[idx]);
+        count++;
+        if (count >= pdpThumbnails.length * 2) {
+          clearInterval(interval);
+        }
+      }, 200);
+    }
+
+    function openPdpZoomModal() {
+      const mainImg = document.getElementById('pdp-main-image');
+      const mainSrc = mainImg ? mainImg.src : 'assets/images/bikes/bike-carbon-pro-studio.webp';
+      openPdpZoomModalWithSrc(mainSrc, 'Astāvik Carbon Pro', 'Torayca T1100G Carbon Weave Inspection');
+    }
+
+    function openPdpZoomModalWithSrc(src, title, subtitle) {
+      const zoomImg = document.getElementById('pdp-zoom-img');
+      if (zoomImg) zoomImg.src = src;
+      const zoomTitle = document.getElementById('pdp-zoom-title');
+      if (zoomTitle) zoomTitle.innerText = title;
+      const zoomSub = document.getElementById('pdp-zoom-subtitle');
+      if (zoomSub) zoomSub.innerText = subtitle;
+      currentZoomScale = 1;
+      updatePdpZoomTransform();
+      const modal = document.getElementById('pdp-zoom-modal');
+      if (modal) modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePdpZoomModal() {
+      const modal = document.getElementById('pdp-zoom-modal');
+      if (modal) modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function zoomPdpModal(delta) {
+      currentZoomScale = Math.min(Math.max(currentZoomScale + delta, 1), 3.5);
+      updatePdpZoomTransform();
+    }
+
+    function resetPdpZoomModal() {
+      currentZoomScale = 1;
+      updatePdpZoomTransform();
+    }
+
+    function updatePdpZoomTransform() {
+      const wrapper = document.getElementById('pdp-zoom-wrapper');
+      if (wrapper) wrapper.style.transform = `scale(${currentZoomScale})`;
+      const label = document.getElementById('pdp-zoom-level');
+      if (label) label.innerText = Math.round(currentZoomScale * 100) + '%';
+    }
+
+    function openBiomechModal() {
+      const modal = document.getElementById('pdp-calc-modal');
+      if (modal) modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+      updateBiomechModalCalc();
+    }
+
+    function closeBiomechModal() {
+      const modal = document.getElementById('pdp-calc-modal');
+      if (modal) modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function updateBiomechModalCalc() {
+      const h = parseInt(document.getElementById('modal-height-slider').value) || 176;
+      const i = parseInt(document.getElementById('modal-inseam-slider').value) || 82;
+      document.getElementById('modal-height-val').innerText = h + ' cm';
+      document.getElementById('modal-inseam-val').innerText = i + ' cm';
+
+      let size = 'M';
+      let heightRange = '172 - 180 cm';
+      let ratio = '1.42';
+      let posture = 'Competición Agresiva (Geometría equilibrada para óptima transferencia de vatios)';
+
+      if (h < 166 || i < 76) {
+        size = 'XS';
+        heightRange = '158 - 166 cm';
+        ratio = '1.38';
+        posture = 'Competición Agresiva (Stack reducido para penetración aerodinámica)';
+      } else if (h <= 172 || i < 80) {
+        size = 'S';
+        heightRange = '166 - 172 cm';
+        ratio = '1.40';
+        posture = 'Competición Agresiva (Equilibrio de velocidad en escalada)';
+      } else if (h <= 180 || i <= 84) {
+        size = 'M';
+        heightRange = '172 - 180 cm';
+        ratio = '1.42';
+        posture = 'Competición Agresiva (Geometría equilibrada para óptima transferencia de vatios)';
+      } else if (h <= 188 || i <= 89) {
+        size = 'L';
+        heightRange = '180 - 188 cm';
+        ratio = '1.45';
+        posture = 'Aero Equilibrada (Mayor stack para estabilidad a altas velocidades)';
+      } else {
+        size = 'XL';
+        heightRange = '188 - 198 cm';
+        ratio = '1.48';
+        posture = 'Aero Endurance (Confort ergonómico en etapas de fondo)';
+      }
+
+      document.getElementById('modal-recommended-size').innerText = 'TALLA ' + size;
+      document.getElementById('modal-posture-desc').innerText = posture;
+      document.getElementById('modal-stack-reach').innerText = ratio;
+      document.getElementById('modal-height-range').innerText = heightRange;
+      document.getElementById('modal-apply-btn-text').innerText = 'APLICAR TALLA ' + size;
+    }
+
+    function applyBiomechModalSize() {
+      const h = parseInt(document.getElementById('modal-height-slider').value) || 176;
+      const i = parseInt(document.getElementById('modal-inseam-slider').value) || 82;
+      const hSlider = document.getElementById('height-slider');
+      const iSlider = document.getElementById('inseam-slider');
+      if (hSlider) hSlider.value = h;
+      if (iSlider) iSlider.value = i;
+      calculateSize();
+      closeBiomechModal();
+    }
+
+    function openWompiCheckout() {
+      openGuestCheckout();
     }
 
     function calculateSize() {

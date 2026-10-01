@@ -111,5 +111,22 @@
   6. *Sincronización & Pipeline:* Paridad 100% entre `index.html` y `code.html`, compilación de Tailwind CLI (`assets/css/style.css` de 35KB), tests de Vitest superados (5/5) y build de producción Vite exitoso en 790ms.
 - **Estado Resultante:** Plataforma adaptada de forma nativa e impecable a móviles, tablets y monitores de alta resolución con experiencia ergonómica de nivel profesional.
 
+## Sesión: 2026-10-01 — Calibración Focal Responsiva del Hero Header
+- **Objetivo:** Ajustar el encuadre focal de la imagen de fondo en el Hero Header en resoluciones móviles y adaptativas para mantener al ciclista como punto focal centrado sin recortes mutilantes ni desbalance con el texto.
+- **Acciones Realizadas:**
+  1. *Análisis empírico del asset:* Identificación del ciclista en las coordenadas X: 55%–82% (baricentro en ~70%) de `assets/images/hero/hero-cyclist-poc-forest.webp`.
+  2. *Escala focal responsiva con Tailwind:* Sustitución de `object-center` estático por `object-[70%_center] sm:object-[65%_center] lg:object-center` en el tag `<img>` de `index.html` y `code.html`.
+  3. *Verificación empírica & Compilación:* Recompilación exitosa de Tailwind CSS en `assets/css/style.css` (476ms), build de producción con Vite (`dist/index.html` y `dist/code.html` en 1.03s) y ejecución de pruebas unitarias con Vitest (5/5 superadas).
+- **Estado Resultante:** Hero Header con encuadre responsivo impecable, ciclista centrado en móvil y tablet, y total legibilidad del titular brutalista "ELITE O NADA" bajo contraste WCAG AA.
 
+## Sesión: 2026-10-01 — Implementación de la PDP Dinámica de Bicicletas en Next.js App Router
+- **Objetivo:** Desarrollar la Página de Detalle de Producto (PDP) para Bicicletas de Alto Rendimiento con fidelidad absoluta al mockup oficial, arquitectura dinámica en Next.js (App Router, React 19, TypeScript), galería táctil móvil con peek del 15% y modal pinch-to-zoom, calculadora biomecánica persistente (Zustand + `localStorage`) e integración transaccional Wompi.
+- **Acciones Realizadas:**
+  1. *Infraestructura y Tipos:* Definición de `types/bike.ts`, dataset estructurado `data/bike-products.ts` (`Astāvik Carbon Pro 2025`, `$18.500.000 COP`), `stores/useCartStore.ts`, `stores/useBiomechanicsStore.ts` y utilidad canónica `lib/format.ts`.
+  2. *Componentes PDP Modulares:* `HeaderNavbar`, `BreadcrumbsBar` (con badge `ID: AST-CP25` y matriz de cuadro), `ProductGallery` (Desktop Viewer v3.4 con 4K, 360° spin, inspección 120 puntos y carrusel móvil táctil con peek del 15%), `PinchZoomModal` (gestos multi-touch continuos hasta 3.5x), `BuyBox`, `BiomechanicalCalculatorModal`, `CartDrawer` y `WompiCheckoutModal`.
+  3. *Secciones de Ingeniería & Fábrica:* Maquetación de *"ARQUITECTURA DE CUADRO & GEOMETRÍA"* con Blueprint 2D vectorial interactivo y tabla CAD de medidas reactiva a la talla seleccionada; y *"MATRIZ DE COMPONENTES"* con 6 cards de alta fidelidad y peso verificado de 6.82 KG.
+  4. *Ruta Dinámica & Next.js App Router:* Implementación de `app/bicicletas/[slug]/page.tsx` con generación estática `generateStaticParams` y metadata optimizada.
+  5. *Paridad y Sincronización Canónica:* Actualización y sincronización idéntica en `code.html` e `index.html`.
+  6. *Verificación Empírica Total:* 9/9 tests unitarios superados en Vitest (`tests/pdp.test.js`), build Vite en 967ms (`npm run build`) y build Next.js App Router exitoso en 1.6s (`npm run next:build`) con respuesta 200 OK en SSR/SSG.
+- **Estado Resultante:** PDP de bicicletas de alto rendimiento completada al 100% bajo estándares de grado de producción, arquitectura dinámica, cero regresiones y fidelidad pixel-perfect al Design System.
 

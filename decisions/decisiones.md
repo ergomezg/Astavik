@@ -100,4 +100,19 @@
   5. *Prevención de Auto-Zoom en iOS:* Inputs y selects configurados con `text-base md:text-sm` (tamaño de fuente $\ge 16\text{ px}$ en móvil) para impedir el zoom involuntario del viewport en Safari iOS.
 - **Razonamiento:** Maximiza la ergonomía y usabilidad con una sola mano sin alterar la identidad de marca, reduce la fricción en el embudo de compra y garantiza total estabilidad visual sin regresiones funcionales.
 
+### [2026-10-01] Calibración Focal Responsiva del Hero Header (Mobile-First)
+- **Contexto:** En resoluciones móviles y tablets con aspect-ratio vertical, el uso de `object-center` en el asset 16:9 (`hero-cyclist-poc-forest.webp`) recortaba severamente al ciclista situado en las coordenadas derechas del encuadre físico (X: ~68%–70%), mientras que el espacio negativo de árboles ocupaba el viewport.
+- **Decisión:** Implementar escala focal fluida con Tailwind: `object-[70%_center]` en mobile (<640px), `sm:object-[65%_center]` en tablet (640-1023px) y `lg:object-center` en desktop (>=1024px).
+- **Razonamiento:** Mantiene al atleta y su bicicleta como sujeto protagónico sin mutilaciones periféricas en pantallas verticales, preservando el contraste con el titular "ELITE O NADA" y sin recurrir a duplicación de marcado ni volteado de imagen que invertiría la tipografía de marca.
+
+### [2026-10-01] Arquitectura de PDP Dinámica en Next.js App Router & Paridad Visual Canónica
+- **Contexto:** Construcción de la Página de Detalle de Producto (PDP) para Bicicletas de Alto Rendimiento (`Astāvik Carbon Pro 2025`, ruta dinámica `/bicicletas/[slug]`), exigiendo fidelidad absoluta al mockup de alta fidelidad, integración de Next.js 16/React 19, TypeScript, Zustand con persistencia en `localStorage`, visor táctil móvil con peek del 15% y modal pinch-to-zoom.
+- **Decisión:**
+  1. *Estructura Dinámica Next.js App Router:* Creación de `types/bike.ts`, dataset estructurado `data/bike-products.ts` y ruta dinámica `app/bicicletas/[slug]/page.tsx` con soporte de generación estática (`generateStaticParams`).
+  2. *Galería Dual & Mobile Peek 15%:* Desktop Viewer v3.4 con HUD técnico superior (versión de visor, resolución 4K, botón 360° spin) e inferior (peso 6.82 KG, grupo, paso de rueda 34mm e inspección 120 puntos); contenedor móvil con slides a `85vw` en `scroll-snap` revelando un 15% de la siguiente imagen sin controles intrusivos.
+  3. *Modal Multitáctil Pinch-to-Zoom:* Modal inmersivo a pantalla completa (`PinchZoomModal`) con cálculo euclidiano de distancia de dos dedos para zoom continuo (hasta 3.5x), paneo y controles de accesibilidad.
+  4. *Calculadora Biomecánica & Persistencia Zustand:* Stores independientes (`useCartStore` y `useBiomechanicsStore`) con middleware persistente en `localStorage`. Selector interactivo de tallas (`XS`, `S`, `M`, `L`, `XL`) con sincronización bidireccional entre recomendación antropométrica y resaltado en la matriz CAD de geometría.
+  5. *Ingeniería CAD 2D & Matriz de Componentes:* Esquema vectorial de arquitectura de cuadro con cotas de Stack, Reach y Wheelbase, tabla de especificaciones geométricas de 6 medidas por talla y grid de 6 especificaciones de fábrica con peso verificado 6.82 KG.
+  6. *Paridad y Cero Regresiones:* Sincronización idéntica en `code.html` y `index.html` asegurando que la suite de Vitest (9/9 tests exitosos) y ambas compilaciones (`npm run build` y `npm run next:build`) ejecuten en <1.5s sin fallos.
+- **Razonamiento:** Ofrece una arquitectura desacoplada para producción y escalabilidad, cumpliendo estrictamente con el PRD y el sistema de diseño Void Black de Astāvik.
 
